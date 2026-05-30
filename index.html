@@ -16,6 +16,9 @@
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
   
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   
@@ -36,11 +39,31 @@
         <li><a href="#visualize" class="nav-link" data-section="visualize">Visualisasi</a></li>
         <li><a href="#about" class="nav-link" data-section="about">Tentang</a></li>
       </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <button id="qr-btn" class="btn btn-sm btn-outline" style="padding: 6px 12px; font-size: 0.75rem;">
+          <i data-lucide="qr-code"></i> Share QR
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
+
+  <!-- QR/Share Modal -->
+  <div id="qr-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i data-lucide="share-2"></i> Bagikan Aplikasi</h3>
+        <button id="close-modal" class="close-btn"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <p>Scan QR Code di bawah untuk membuka aplikasi ini di perangkat lain:</p>
+        <div id="qrcode-container" class="qrcode-container"></div>
+        <p class="modal-url" id="modal-url-display"></p>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== HERO / HOME ========== -->
   <section class="section hero" id="home">

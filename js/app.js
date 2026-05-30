@@ -39,6 +39,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const historyList = document.getElementById('history-list');
     const clearHistoryBtn = document.getElementById('clear-history');
 
+    // QR Code Modal
+    const qrBtn = document.getElementById('qr-btn');
+    const qrModal = document.getElementById('qr-modal');
+    const closeModal = document.getElementById('close-modal');
+    const qrContainer = document.getElementById('qrcode-container');
+    const modalUrlDisplay = document.getElementById('modal-url-display');
+    let qrGenerated = false;
+
     // 4. Inisialisasi Chart.js
     let comparisonChart = null;
     let eduSalaryChart = null;
@@ -338,6 +346,41 @@ document.addEventListener('DOMContentLoaded', () => {
             updateHistoryUI();
         });
     }
+
+    // ========== QR CODE MODAL ==========
+    if(qrBtn) {
+        qrBtn.addEventListener('click', () => {
+            qrModal.classList.remove('hidden');
+            const currentUrl = window.location.href.split('#')[0];
+            modalUrlDisplay.textContent = currentUrl;
+            
+            if(!qrGenerated && typeof QRCode !== 'undefined') {
+                qrContainer.innerHTML = '';
+                new QRCode(qrContainer, {
+                    text: currentUrl,
+                    width: 180,
+                    height: 180,
+                    colorDark : "#0a0a0c",
+                    colorLight : "#ffffff",
+                    correctLevel : QRCode.CorrectLevel.H
+                });
+                qrGenerated = true;
+            }
+        });
+    }
+
+    if(closeModal) {
+        closeModal.addEventListener('click', () => {
+            qrModal.classList.add('hidden');
+        });
+    }
+
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+        if(e.target === qrModal) {
+            qrModal.classList.add('hidden');
+        }
+    });
 
     // ========== INIT ==========
     initVisualizationCharts();
