@@ -1,0 +1,1001 @@
+Age,Gender,Education Level,Job Title,Years of Experience,Salary
+35,Male,High School,Business Analyst,6,63077.77
+52,Female,High School,Marketing Manager,5,69937.69
+25,Male,Bachelor's,Sales Director,0,63147.72
+29,Male,High School,Content Creator,4,59292.49
+24,Female,Bachelor's,Sales Director,0,72655.69
+59,Female,Master's,Data Analyst,7,109378.77
+42,Male,Master's,Product Manager,17,120842.69
+36,Male,PhD,VP of Operations,0,103728.53
+44,Female,Master's,Marketing Analyst,3,102437.25
+49,Female,PhD,Receptionist,24,199495.09
+58,Female,PhD,Director,14,151579.7
+32,Female,Bachelor's,Engineer,1,65180.24
+23,Male,Bachelor's,Software Developer,1,61663.58
+24,Male,High School,Director of Operations,5,58833.27
+34,Male,Master's,Sales Associate,1,86076.77
+57,Female,Master's,Sales Director,11,114295.1
+26,Female,Bachelor's,Data Scientist,2,78351.54
+24,Male,Bachelor's,Business Analyst,0,55863.58
+39,Male,Master's,VP of Operations,2,92104.54
+46,Male,Bachelor's,Sales Associate,9,98909.06
+44,Male,Bachelor's,Marketing Manager,21,125047.78
+36,Female,Master's,Data Analyst,7,107868.35
+42,Female,Master's,UX Designer,10,114553.02
+28,Female,Bachelor's,HR Manager,1,64203.09
+27,Male,Bachelor's,IT Support,3,68560.13
+39,Female,PhD,Research Scientist,2,110331.71
+34,Female,Master's,HR Manager,8,106352.88
+52,Male,Bachelor's,Product Manager,16,103660.28
+63,Female,PhD,Director,19,188506.87
+47,Male,High School,Product Manager,25,121972.95
+52,Male,PhD,Data Scientist,8,143259.73
+49,Male,Bachelor's,Software Developer,1,80182.04
+34,Male,Master's,Data Analyst,11,110664.76
+29,Female,Bachelor's,Senior Manager,1,70353.7
+48,Male,High School,Senior Scientist,10,72373.0
+44,Male,Bachelor's,Software Developer,15,100230.3
+52,Female,Master's,Business Analyst,6,109717.67
+46,Male,Master's,Content Creator,3,96490.13
+46,Male,Master's,Content Creator,16,120715.27
+47,Female,Master's,Marketing Analyst,9,109758.49
+35,Female,Bachelor's,Sales Director,4,78070.27
+58,Female,PhD,UX Designer,3,116817.44
+31,Male,Bachelor's,Receptionist,1,62324.01
+45,Female,PhD,Director,6,136191.02
+50,Female,High School,Director,25,123400.13
+49,Male,Bachelor's,Receptionist,24,140731.32
+31,Female,Bachelor's,Director of Operations,9,80007.12
+36,Male,High School,Data Scientist,17,91452.58
+31,Female,Bachelor's,IT Support,4,72828.31
+36,Male,Master's,HR Manager,5,104094.52
+35,Female,Master's,Software Engineer,3,101712.28
+61,Male,PhD,Operations Manager,12,149051.19
+45,Male,High School,Marketing Analyst,19,112533.65
+38,Male,Bachelor's,Operations Manager,15,109031.86
+36,Female,Master's,Product Manager,3,95913.89
+28,Male,Bachelor's,Web Developer,5,77458.47
+25,Male,Bachelor's,Product Manager,2,71692.58
+34,Female,Master's,Receptionist,7,109803.15
+28,Male,Bachelor's,Financial Analyst,2,73797.09
+25,Female,Bachelor's,Software Developer,0,61105.97
+31,Female,Master's,Research Scientist,0,88424.88
+39,Female,PhD,Senior Scientist,0,114311.2
+48,Female,Bachelor's,VP of Operations,7,102735.41
+54,Female,High School,Sales Director,23,111727.46
+23,Female,High School,Sales Manager,5,53011.01
+36,Male,Bachelor's,Engineer,11,83502.76
+50,Female,Master's,Web Developer,27,147589.74
+44,Female,Bachelor's,Research Scientist,7,102846.39
+43,Male,Bachelor's,Sales Associate,18,121118.97
+43,Male,Bachelor's,Sales Manager,4,76250.18
+31,Male,Bachelor's,Sales Director,2,64296.71
+36,Male,Master's,Senior Scientist,10,108985.43
+22,Male,High School,IT Support,1,49267.25
+33,Female,Bachelor's,Graphic Designer,4,87053.56
+55,Female,Master's,Senior Scientist,31,187199.7
+64,Male,PhD,Product Manager,39,211108.39
+26,Female,Bachelor's,Content Creator,1,67283.49
+59,Female,Master's,Software Engineer,4,101355.48
+52,Male,Bachelor's,Receptionist,11,101842.08
+44,Female,Master's,Software Developer,13,143861.83
+22,Male,Bachelor's,Marketing Manager,0,51829.61
+34,Female,PhD,Project Engineer,2,120192.57
+41,Female,PhD,Marketing Manager,0,91064.98
+27,Male,Bachelor's,Financial Analyst,3,76899.64
+42,Female,Bachelor's,Marketing Analyst,4,72946.29
+30,Female,Master's,Product Manager,1,94235.08
+28,Female,Master's,Director of Operations,1,95351.21
+46,Female,High School,Director of Operations,24,115583.4
+55,Male,Master's,Sales Manager,28,153773.85
+27,Male,Bachelor's,Operations Manager,3,73553.79
+57,Male,Master's,Product Manager,3,94912.04
+59,Male,Bachelor's,Operations Manager,18,127047.11
+39,Female,Bachelor's,Receptionist,9,92284.1
+48,Female,Bachelor's,Sales Manager,10,99362.18
+28,Female,Bachelor's,Content Creator,1,65603.69
+34,Female,Bachelor's,Product Manager,8,100165.89
+32,Male,Bachelor's,Sales Director,0,71955.4
+41,Male,Bachelor's,Operations Manager,4,97172.56
+55,Female,Bachelor's,Sales Associate,16,99638.59
+30,Female,Master's,Marketing Coordinator,0,89598.75
+31,Female,High School,VP of Operations,2,50135.18
+55,Male,PhD,Web Developer,0,106096.12
+59,Female,Bachelor's,Project Engineer,14,120351.89
+22,Male,High School,Research Scientist,4,46744.13
+41,Male,Bachelor's,Product Manager,7,83327.18
+22,Female,High School,Director,4,52323.58
+53,Female,Bachelor's,Data Scientist,27,127899.38
+26,Male,Bachelor's,Marketing Manager,2,72533.47
+45,Male,Bachelor's,Marketing Manager,23,113844.79
+52,Male,High School,Senior Manager,18,123189.89
+58,Female,Bachelor's,Business Analyst,4,93978.81
+31,Male,Master's,VP of Operations,2,82265.21
+39,Male,Bachelor's,Research Scientist,15,117965.53
+26,Male,Master's,Director of Operations,3,86455.54
+57,Male,Bachelor's,Data Analyst,21,137409.33
+47,Male,Bachelor's,Marketing Manager,13,94036.92
+47,Male,Master's,Operations Manager,11,118752.81
+52,Female,PhD,Data Analyst,11,144308.36
+37,Male,PhD,Data Scientist,6,133191.97
+26,Female,Master's,Marketing Analyst,2,96241.45
+42,Female,Bachelor's,Data Scientist,6,92965.98
+41,Male,Master's,Account Manager,14,128447.01
+37,Male,Bachelor's,Software Developer,7,81852.1
+43,Female,Bachelor's,Business Analyst,14,108621.9
+51,Female,High School,Software Developer,13,84040.59
+32,Female,Bachelor's,Marketing Manager,9,88153.61
+36,Male,High School,Marketing Coordinator,9,68688.42
+37,Male,Bachelor's,Business Analyst,3,81185.88
+24,Female,Bachelor's,Research Scientist,0,52838.91
+32,Male,Master's,Web Developer,9,96384.12
+57,Female,Bachelor's,Research Scientist,30,119209.09
+33,Male,High School,Sales Associate,13,87286.52
+54,Female,Master's,Software Engineer,15,137270.04
+48,Male,Bachelor's,Marketing Coordinator,14,104078.95
+48,Female,Master's,Software Engineer,11,120167.12
+45,Female,High School,Sales Associate,0,52133.35
+48,Male,Bachelor's,Sales Associate,2,81081.2
+38,Male,High School,Product Manager,11,72386.66
+41,Female,Master's,Marketing Manager,0,94064.85
+52,Male,High School,Account Manager,12,73420.59
+45,Female,Master's,Project Engineer,2,96813.07
+58,Female,Bachelor's,Financial Analyst,15,123556.05
+35,Male,PhD,HR Manager,2,109150.54
+41,Male,Master's,Sales Associate,1,92480.38
+41,Female,Master's,HR Manager,19,145673.93
+37,Male,Master's,HR Manager,15,121403.54
+57,Male,Bachelor's,Senior Scientist,8,101747.35
+39,Male,Bachelor's,Sales Director,14,114726.29
+45,Male,Bachelor's,Marketing Analyst,1,69727.3
+41,Male,Bachelor's,Graphic Designer,5,82274.58
+50,Male,Bachelor's,Product Manager,23,126001.52
+36,Male,High School,Operations Manager,2,59049.17
+56,Male,Bachelor's,Product Manager,27,155857.96
+51,Female,Master's,Engineer,24,157005.59
+31,Female,High School,Business Analyst,4,60007.72
+33,Male,Master's,Product Manager,7,106702.1
+47,Female,Bachelor's,Content Creator,5,84698.6
+30,Female,Master's,Financial Analyst,8,107153.17
+44,Male,Bachelor's,Research Scientist,4,87141.58
+33,Female,Bachelor's,Marketing Manager,4,74854.67
+41,Female,Bachelor's,Product Manager,10,103287.6
+35,Female,High School,Receptionist,14,73754.54
+52,Male,Master's,Data Scientist,20,143858.61
+54,Male,Master's,Senior Manager,16,129429.49
+60,Female,Master's,Financial Analyst,1,102730.92
+52,Male,Master's,Receptionist,20,145470.18
+44,Female,Bachelor's,Project Engineer,11,116615.12
+38,Male,Master's,IT Support,4,93924.81
+52,Female,PhD,Content Creator,5,127955.87
+52,Male,High School,Web Developer,13,75598.48
+48,Male,Master's,Data Analyst,12,119752.4
+46,Female,Bachelor's,IT Support,14,93454.72
+53,Male,Master's,Data Analyst,28,180773.31
+51,Male,Bachelor's,Project Engineer,25,163342.12
+57,Male,PhD,Project Engineer,5,122676.65
+52,Female,High School,Marketing Analyst,5,64490.03
+31,Male,Bachelor's,VP of Operations,4,74237.75
+24,Male,Bachelor's,Marketing Analyst,0,72517.68
+22,Female,Bachelor's,Software Engineer,0,57493.71
+39,Female,High School,Product Manager,9,73452.55
+50,Female,Bachelor's,Software Engineer,10,98779.02
+50,Female,Bachelor's,Content Creator,28,144356.42
+55,Female,Master's,Data Analyst,21,148156.47
+40,Male,Master's,Marketing Manager,9,105958.11
+24,Female,Bachelor's,IT Support,0,64188.98
+30,Female,High School,Marketing Manager,12,79382.49
+51,Male,Bachelor's,Engineer,21,127918.29
+32,Male,PhD,Operations Manager,5,121782.36
+28,Male,Master's,Project Engineer,1,79541.03
+38,Male,Master's,Marketing Coordinator,12,123513.09
+36,Male,Master's,Software Developer,8,106149.69
+51,Female,Master's,Senior Manager,26,161225.01
+57,Female,Bachelor's,Data Analyst,18,129952.99
+36,Male,High School,Account Manager,14,89396.73
+37,Male,Master's,UX Designer,2,89968.57
+27,Female,Bachelor's,Research Scientist,3,83911.53
+28,Male,Bachelor's,Receptionist,6,86108.39
+46,Male,Bachelor's,Sales Manager,9,100462.02
+45,Female,Bachelor's,Web Developer,16,119115.03
+44,Male,Bachelor's,Data Analyst,1,64573.56
+51,Female,High School,Financial Analyst,28,120375.02
+33,Male,High School,Senior Scientist,12,94303.71
+51,Male,Master's,Content Creator,16,146328.66
+33,Male,Bachelor's,Marketing Manager,4,80626.85
+38,Female,PhD,Data Scientist,9,128561.67
+46,Male,Master's,Sales Director,21,157951.95
+48,Female,Bachelor's,HR Manager,12,90273.39
+43,Male,Bachelor's,UX Designer,3,77609.29
+42,Male,Bachelor's,HR Manager,2,64591.79
+33,Female,Bachelor's,Research Scientist,0,73425.77
+54,Female,Master's,Web Developer,9,109808.47
+44,Female,Bachelor's,Sales Director,9,97521.31
+23,Male,Bachelor's,Account Manager,1,59718.71
+52,Female,Bachelor's,Senior Manager,27,123439.45
+31,Female,Master's,Sales Director,7,92280.17
+53,Male,Master's,Senior Manager,16,130640.41
+47,Male,Master's,Financial Analyst,14,144296.4
+39,Male,Bachelor's,Marketing Coordinator,2,78511.25
+42,Male,Master's,Sales Associate,6,115911.8
+42,Male,High School,Product Manager,2,47655.82
+35,Male,Bachelor's,Engineer,1,73056.3
+55,Female,Bachelor's,Software Developer,2,74149.78
+53,Female,Bachelor's,Senior Manager,1,76453.65
+56,Male,Master's,UX Designer,19,129043.71
+42,Female,High School,Graphic Designer,21,102826.42
+48,Male,Bachelor's,Web Developer,24,147890.52
+49,Male,Bachelor's,Software Engineer,7,93769.65
+35,Female,Master's,Financial Analyst,8,117583.61
+38,Male,Master's,Product Manager,0,90414.3
+58,Male,Bachelor's,VP of Operations,30,171492.62
+45,Male,Master's,Web Developer,21,164277.57
+52,Female,Master's,Operations Manager,14,142869.79
+26,Female,Master's,Data Analyst,3,88534.99
+33,Male,Master's,Project Engineer,0,82327.57
+51,Female,Bachelor's,Senior Manager,16,107075.74
+54,Female,Bachelor's,Web Developer,5,80957.99
+46,Female,PhD,Data Analyst,4,116804.98
+51,Female,PhD,Business Analyst,6,113117.25
+23,Female,Bachelor's,UX Designer,1,70626.71
+51,Male,PhD,Marketing Analyst,5,124577.91
+49,Female,Bachelor's,Software Developer,0,82898.2
+52,Female,Master's,Product Manager,12,131245.51
+36,Male,High School,Project Engineer,18,98515.3
+53,Male,High School,Operations Manager,21,105457.13
+51,Male,Master's,Business Analyst,10,114967.94
+24,Male,Bachelor's,Engineer,2,67199.89
+59,Male,PhD,Sales Manager,37,211651.16
+57,Female,Bachelor's,Content Creator,17,107675.13
+54,Female,Bachelor's,Project Engineer,30,130974.05
+47,Female,Bachelor's,Receptionist,9,95248.43
+51,Male,Master's,Product Manager,11,111257.69
+28,Female,Bachelor's,VP of Operations,3,74935.51
+60,Female,PhD,Senior Scientist,22,171123.97
+34,Male,Bachelor's,Product Manager,0,75156.49
+36,Male,Master's,UX Designer,9,112435.9
+46,Male,High School,Data Scientist,6,65444.67
+36,Male,Bachelor's,Receptionist,6,71911.31
+46,Female,PhD,Sales Director,19,142980.42
+39,Male,Bachelor's,Product Manager,14,106682.3
+30,Female,PhD,Receptionist,3,106236.81
+29,Male,Bachelor's,Senior Manager,7,78841.62
+39,Female,High School,Web Developer,21,92571.39
+58,Female,Master's,Software Developer,9,127811.1
+51,Male,Bachelor's,Marketing Analyst,19,123578.01
+38,Female,Master's,Operations Manager,1,92831.83
+41,Male,Bachelor's,Project Engineer,14,105117.89
+53,Male,PhD,IT Support,23,153210.56
+33,Male,Bachelor's,Senior Scientist,8,88173.1
+49,Male,Bachelor's,Sales Associate,7,85706.18
+40,Female,Bachelor's,Financial Analyst,17,113792.62
+38,Female,Master's,Research Scientist,5,108468.82
+42,Male,Master's,Marketing Coordinator,3,88945.73
+60,Male,PhD,Project Engineer,2,122639.23
+23,Male,Bachelor's,Senior Scientist,1,66131.69
+44,Male,Master's,Marketing Coordinator,4,105180.29
+23,Female,Bachelor's,Director,0,62311.56
+24,Female,Bachelor's,Financial Analyst,0,71126.0
+46,Female,Bachelor's,Marketing Manager,23,142071.28
+50,Male,PhD,Director of Operations,20,158630.22
+25,Male,High School,Marketing Manager,3,47073.22
+46,Female,Master's,HR Manager,8,112624.6
+47,Female,Master's,Marketing Manager,11,117362.16
+50,Female,High School,Marketing Manager,15,102366.0
+58,Female,Bachelor's,Software Developer,31,166523.22
+49,Female,Bachelor's,Sales Associate,4,90397.55
+44,Male,Bachelor's,Data Scientist,11,96984.93
+36,Female,Master's,Sales Manager,8,112222.69
+60,Male,Master's,Director of Operations,24,128750.49
+51,Male,Bachelor's,Director of Operations,15,99364.57
+58,Female,Master's,Account Manager,19,149082.14
+45,Male,Master's,Marketing Coordinator,19,145823.61
+36,Female,High School,Senior Scientist,3,48484.24
+61,Male,Master's,Senior Manager,14,120486.62
+49,Male,High School,HR Manager,16,88983.83
+32,Female,Bachelor's,Business Analyst,3,74060.73
+50,Female,Master's,Sales Associate,6,109879.37
+47,Female,Master's,Marketing Coordinator,3,97720.81
+26,Female,Bachelor's,Receptionist,0,62396.82
+58,Female,PhD,Financial Analyst,30,174072.55
+40,Female,Master's,Graphic Designer,15,137751.09
+22,Female,Bachelor's,Receptionist,0,56385.59
+43,Male,Bachelor's,HR Manager,4,87401.78
+33,Female,Bachelor's,Project Engineer,0,72591.44
+31,Male,Bachelor's,Web Developer,3,86924.64
+32,Female,Bachelor's,Research Scientist,1,66457.78
+50,Male,Master's,Operations Manager,6,116822.48
+47,Female,PhD,VP of Operations,16,167621.8
+48,Female,Master's,Account Manager,0,82971.39
+42,Male,Master's,IT Support,3,91876.55
+34,Female,Master's,Engineer,10,112166.0
+51,Female,Master's,Product Manager,20,138357.4
+46,Male,PhD,Director of Operations,10,127893.75
+30,Female,Bachelor's,Financial Analyst,0,71751.45
+51,Male,Bachelor's,Software Developer,29,168565.13
+55,Male,Master's,Web Developer,15,139747.3
+56,Female,PhD,Product Manager,18,155518.76
+41,Male,High School,Marketing Analyst,4,58289.13
+44,Male,Master's,IT Support,0,94325.15
+34,Male,Master's,Marketing Analyst,1,91160.14
+43,Female,Master's,Senior Scientist,14,125452.95
+59,Male,Master's,VP of Operations,4,115898.28
+28,Female,Master's,Engineer,2,87445.24
+52,Male,PhD,Account Manager,18,167479.35
+43,Male,Master's,Research Scientist,16,149506.2
+33,Female,Bachelor's,Sales Director,11,95180.94
+36,Male,Bachelor's,Director,12,110079.11
+26,Female,Bachelor's,Engineer,2,71436.37
+28,Female,High School,Marketing Coordinator,8,58080.73
+31,Female,Bachelor's,VP of Operations,3,78926.68
+41,Male,Master's,Operations Manager,2,96416.97
+43,Male,PhD,VP of Operations,9,139260.91
+46,Male,High School,Director of Operations,22,112456.87
+44,Female,PhD,Marketing Analyst,6,133054.45
+31,Male,Bachelor's,Business Analyst,6,76974.43
+32,Female,High School,Engineer,13,77532.72
+31,Male,High School,Graphic Designer,4,55610.62
+57,Male,Master's,Director,5,102934.85
+52,Male,Bachelor's,Senior Scientist,9,105548.28
+39,Male,Bachelor's,Marketing Analyst,16,92011.72
+54,Female,Bachelor's,Engineer,17,130420.22
+42,Male,High School,Software Developer,21,81479.44
+44,Female,Bachelor's,Business Analyst,10,109310.88
+44,Male,Bachelor's,Director of Operations,10,95627.62
+60,Male,PhD,Financial Analyst,35,223002.56
+58,Male,Master's,Director of Operations,32,166170.0
+55,Male,Bachelor's,Sales Associate,23,142305.34
+37,Male,Bachelor's,Software Developer,2,68514.73
+57,Female,Bachelor's,Marketing Coordinator,31,173202.26
+55,Female,Bachelor's,Receptionist,32,172717.91
+28,Female,Bachelor's,Senior Scientist,2,73717.24
+31,Male,Bachelor's,Graphic Designer,7,79065.17
+30,Male,Bachelor's,UX Designer,7,74475.84
+48,Female,Master's,Senior Scientist,20,145119.49
+47,Female,High School,Graphic Designer,29,103784.41
+30,Male,High School,Software Engineer,7,62706.39
+54,Male,Bachelor's,Graphic Designer,31,166274.2
+49,Male,Master's,Marketing Analyst,8,124236.04
+55,Male,Bachelor's,Graphic Designer,27,139199.32
+44,Female,Master's,IT Support,10,110222.38
+52,Male,Bachelor's,Business Analyst,18,111144.12
+26,Female,Master's,Data Scientist,1,85427.18
+22,Female,High School,Sales Associate,4,45795.5
+57,Female,Master's,VP of Operations,21,169795.35
+61,Male,Master's,VP of Operations,37,200380.03
+55,Male,Bachelor's,Receptionist,27,140117.0
+49,Female,High School,Business Analyst,12,73014.12
+23,Female,High School,HR Manager,1,46861.25
+47,Male,Master's,Software Developer,5,107732.98
+32,Male,Master's,Engineer,10,110399.39
+24,Female,Bachelor's,Product Manager,0,65273.84
+40,Male,Bachelor's,Financial Analyst,6,89078.45
+39,Female,Master's,Marketing Coordinator,0,76076.44
+35,Female,Master's,VP of Operations,8,113011.88
+53,Male,Master's,Project Engineer,25,165583.07
+35,Female,Bachelor's,Financial Analyst,1,80067.77
+56,Male,Bachelor's,Research Scientist,7,90514.62
+42,Male,Master's,Content Creator,16,154077.11
+57,Male,Bachelor's,Engineer,17,109276.99
+46,Male,Bachelor's,Data Analyst,20,133750.0
+43,Female,Master's,Sales Manager,10,130276.43
+48,Male,High School,Web Developer,4,67648.33
+58,Female,Bachelor's,Project Engineer,7,91781.15
+60,Male,Master's,Data Scientist,29,189801.69
+25,Male,Master's,Account Manager,0,78663.68
+59,Male,Master's,Account Manager,24,141782.29
+42,Male,Bachelor's,VP of Operations,13,96310.73
+42,Male,High School,Software Engineer,8,79124.24
+51,Male,Master's,Data Scientist,14,120513.5
+51,Male,Bachelor's,Product Manager,0,76857.19
+33,Male,Master's,Business Analyst,1,99415.56
+54,Female,Bachelor's,IT Support,4,94768.33
+22,Female,High School,Software Developer,2,52344.89
+53,Male,Master's,Director of Operations,8,108061.36
+58,Male,Bachelor's,Engineer,26,129595.65
+44,Male,High School,Sales Manager,13,81477.63
+49,Male,Bachelor's,Software Developer,2,75105.02
+50,Female,PhD,Sales Associate,11,149790.67
+51,Female,Master's,Receptionist,25,141395.82
+33,Female,Master's,UX Designer,9,120143.57
+28,Male,Bachelor's,Financial Analyst,6,88282.15
+22,Female,Bachelor's,Software Engineer,0,62911.88
+54,Male,Bachelor's,Sales Associate,17,113139.81
+35,Female,Bachelor's,Marketing Manager,5,77871.91
+28,Female,Bachelor's,Software Developer,2,80742.45
+64,Male,PhD,Senior Scientist,10,142145.39
+33,Female,Bachelor's,Engineer,8,92002.59
+49,Female,Master's,Marketing Analyst,15,125700.19
+30,Female,PhD,IT Support,5,112537.93
+57,Male,Bachelor's,Data Analyst,20,121302.19
+29,Male,PhD,Data Analyst,3,110182.1
+26,Female,Master's,Data Analyst,3,84682.63
+54,Male,Master's,IT Support,16,140477.61
+59,Male,Master's,Account Manager,20,133179.85
+29,Male,Master's,HR Manager,3,88175.24
+52,Female,Master's,Marketing Analyst,21,167534.25
+60,Female,Master's,Business Analyst,37,181103.0
+38,Female,Bachelor's,Engineer,13,97873.99
+56,Female,Bachelor's,Project Engineer,26,126258.0
+43,Female,Bachelor's,Marketing Analyst,20,120344.15
+47,Female,Master's,UX Designer,17,128781.15
+30,Male,Bachelor's,Receptionist,1,71716.63
+62,Male,PhD,Research Scientist,15,146161.06
+30,Female,Bachelor's,Operations Manager,6,83100.59
+44,Female,PhD,Financial Analyst,2,124652.05
+40,Male,Bachelor's,Data Scientist,6,100269.81
+50,Female,Master's,Business Analyst,9,101153.35
+51,Female,PhD,Receptionist,4,129723.32
+53,Female,Bachelor's,UX Designer,12,106998.42
+59,Female,Master's,IT Support,11,121349.64
+46,Male,Bachelor's,Engineer,19,109554.53
+34,Male,Bachelor's,IT Support,1,63926.36
+29,Female,Bachelor's,Data Scientist,2,64102.7
+59,Male,Bachelor's,HR Manager,37,160657.65
+26,Female,Master's,Project Engineer,4,90725.84
+47,Female,Master's,Content Creator,16,132648.01
+60,Male,Master's,Sales Manager,12,139406.11
+54,Male,High School,Sales Director,8,82759.39
+36,Female,Bachelor's,Data Analyst,7,87909.78
+55,Female,PhD,Data Analyst,4,127663.0
+27,Male,Bachelor's,Web Developer,3,81674.76
+29,Female,Bachelor's,Financial Analyst,2,76629.12
+49,Female,Bachelor's,Software Developer,19,128306.65
+53,Male,Bachelor's,Content Creator,16,110392.53
+50,Male,Bachelor's,Business Analyst,15,108381.21
+27,Female,Master's,Senior Manager,5,103855.32
+45,Female,Bachelor's,VP of Operations,7,100385.38
+45,Female,High School,Senior Manager,25,109766.08
+25,Male,High School,Sales Director,5,69079.29
+38,Male,Bachelor's,VP of Operations,1,63081.07
+59,Female,Master's,UX Designer,14,125735.31
+49,Male,Master's,Director of Operations,16,151251.88
+36,Female,Master's,Senior Scientist,1,85251.67
+43,Male,Master's,Senior Scientist,20,120081.13
+58,Male,Bachelor's,Operations Manager,21,131192.89
+57,Male,Bachelor's,Product Manager,1,75215.15
+34,Male,High School,Research Scientist,11,81786.71
+34,Female,Bachelor's,Data Analyst,0,71229.16
+53,Male,Master's,Graphic Designer,20,126617.13
+44,Female,Bachelor's,Data Analyst,3,82786.89
+29,Female,PhD,UX Designer,7,121164.84
+30,Female,Master's,Director,2,92412.58
+47,Male,Bachelor's,Marketing Analyst,16,110099.08
+23,Female,Bachelor's,Receptionist,1,63396.87
+33,Male,Bachelor's,Sales Manager,1,64774.04
+43,Male,Master's,Receptionist,16,143846.26
+28,Male,High School,VP of Operations,0,49488.93
+45,Male,Master's,Data Analyst,18,135164.92
+41,Male,High School,Marketing Coordinator,20,104459.92
+30,Male,Bachelor's,Director of Operations,6,87062.88
+32,Female,PhD,Director of Operations,3,99283.33
+29,Female,Master's,Project Engineer,0,84379.34
+52,Male,Master's,Sales Associate,15,149200.31
+41,Female,Bachelor's,Data Analyst,8,81246.59
+34,Female,Bachelor's,Graphic Designer,6,77972.73
+55,Male,Master's,Sales Associate,24,152609.31
+44,Male,Bachelor's,VP of Operations,22,118144.48
+31,Male,PhD,Software Engineer,0,97780.36
+55,Male,Bachelor's,Receptionist,29,157035.59
+36,Male,Bachelor's,Product Manager,2,73183.93
+38,Male,Bachelor's,Project Engineer,6,84385.75
+47,Female,PhD,Sales Director,0,109125.87
+32,Male,Bachelor's,Graphic Designer,6,81494.2
+40,Female,Bachelor's,Graphic Designer,3,80051.64
+51,Female,Master's,Business Analyst,22,150286.55
+54,Female,Bachelor's,Project Engineer,20,130765.49
+50,Female,PhD,Business Analyst,16,163530.85
+50,Female,Bachelor's,Director,15,123510.96
+49,Male,Master's,Director,26,169497.28
+54,Female,High School,UX Designer,14,99376.79
+53,Female,Bachelor's,Director,29,136048.09
+35,Female,Bachelor's,Marketing Coordinator,3,78337.94
+59,Female,Bachelor's,Sales Manager,4,77844.6
+40,Female,PhD,Software Developer,10,134736.09
+40,Female,Bachelor's,Data Analyst,14,123905.55
+58,Male,Bachelor's,Data Scientist,24,136298.02
+30,Male,Bachelor's,Business Analyst,6,78806.6
+29,Female,PhD,Web Developer,6,120889.55
+25,Male,Bachelor's,Sales Associate,3,75304.88
+25,Female,Master's,Data Analyst,2,90719.68
+30,Male,Bachelor's,Engineer,8,82563.49
+42,Female,Bachelor's,HR Manager,4,88812.11
+25,Male,Bachelor's,Graphic Designer,2,68778.7
+32,Male,Bachelor's,Receptionist,1,62356.31
+49,Male,High School,Receptionist,12,67925.77
+41,Male,Bachelor's,Content Creator,3,70333.69
+47,Male,High School,Operations Manager,10,63368.19
+58,Female,Bachelor's,IT Support,33,191430.46
+53,Male,Bachelor's,Business Analyst,23,119633.74
+45,Male,Master's,Marketing Analyst,20,147983.87
+36,Female,Bachelor's,Marketing Manager,10,105144.32
+23,Male,Bachelor's,Marketing Coordinator,1,71661.45
+27,Male,High School,Sales Associate,1,47113.64
+36,Female,Master's,Content Creator,2,97267.66
+51,Female,Bachelor's,Director of Operations,24,148676.19
+29,Male,Bachelor's,Senior Scientist,1,66139.26
+34,Female,Master's,HR Manager,12,121764.81
+45,Female,Master's,Senior Manager,21,165155.7
+52,Male,Master's,HR Manager,6,100595.35
+54,Male,Bachelor's,Marketing Analyst,20,121886.54
+53,Female,Bachelor's,Web Developer,29,136786.39
+45,Male,Master's,Software Developer,10,126109.55
+26,Female,Bachelor's,Senior Manager,3,69102.56
+39,Female,Master's,Operations Manager,13,131322.12
+51,Male,Master's,Web Developer,28,165254.32
+47,Male,Master's,Research Scientist,8,109641.03
+39,Male,Bachelor's,Data Scientist,15,111848.3
+35,Male,Master's,Senior Scientist,10,113186.95
+51,Female,Bachelor's,UX Designer,8,93657.15
+43,Male,High School,Business Analyst,12,84377.4
+57,Female,Bachelor's,IT Support,16,120019.02
+41,Male,High School,Sales Director,18,113207.02
+57,Male,Master's,Sales Associate,18,126344.86
+50,Female,Bachelor's,VP of Operations,9,104391.03
+37,Male,Bachelor's,Web Developer,1,59331.09
+53,Female,Bachelor's,Senior Manager,13,108195.38
+45,Male,Bachelor's,Software Developer,12,106844.44
+51,Male,Master's,Sales Director,3,107140.88
+38,Male,Master's,Receptionist,8,109149.86
+46,Female,PhD,Sales Director,22,171052.71
+54,Female,Master's,Senior Scientist,26,147764.65
+34,Male,Bachelor's,VP of Operations,5,82575.92
+41,Male,Bachelor's,Director,2,70729.28
+27,Female,Bachelor's,Product Manager,5,81126.58
+28,Female,High School,Senior Scientist,7,72201.49
+59,Male,Bachelor's,Sales Manager,37,147212.15
+23,Female,Bachelor's,Marketing Coordinator,0,55546.85
+33,Female,Bachelor's,Operations Manager,7,92498.06
+23,Male,Bachelor's,Web Developer,0,66895.26
+50,Female,Bachelor's,Account Manager,6,91114.63
+28,Female,Bachelor's,Data Analyst,2,68582.78
+27,Male,Bachelor's,Product Manager,0,66853.81
+54,Male,Bachelor's,IT Support,22,115269.03
+36,Female,Bachelor's,Software Engineer,8,91146.88
+28,Female,Master's,Financial Analyst,3,98150.92
+30,Female,Bachelor's,Software Engineer,6,86441.43
+32,Female,Bachelor's,Web Developer,1,80294.46
+31,Male,Master's,Data Scientist,2,95113.95
+24,Female,Bachelor's,Marketing Manager,1,67321.55
+53,Male,Master's,Receptionist,9,117273.79
+49,Male,Master's,Software Engineer,12,115686.56
+54,Male,Bachelor's,Marketing Manager,30,128786.02
+54,Male,Master's,Marketing Manager,27,152130.45
+29,Female,PhD,Marketing Coordinator,3,105601.74
+58,Female,PhD,HR Manager,12,141443.23
+25,Male,Bachelor's,UX Designer,3,84627.11
+28,Female,Bachelor's,Financial Analyst,1,69821.98
+35,Female,High School,Data Scientist,17,98298.85
+51,Female,Bachelor's,Research Scientist,7,93588.13
+40,Male,Master's,UX Designer,7,110297.53
+32,Female,PhD,Financial Analyst,5,111768.44
+33,Female,Master's,Director of Operations,8,103884.96
+55,Male,Bachelor's,Software Developer,27,122407.08
+38,Female,PhD,Director,5,119718.03
+51,Male,Master's,Project Engineer,0,108563.71
+46,Male,Bachelor's,VP of Operations,11,90780.52
+35,Male,Bachelor's,Marketing Coordinator,12,98723.78
+34,Male,Master's,UX Designer,3,97378.18
+59,Male,Bachelor's,Data Scientist,31,166369.92
+52,Male,PhD,Senior Scientist,25,196842.36
+48,Female,PhD,Content Creator,26,164377.99
+53,Male,Master's,Sales Manager,17,145387.59
+49,Female,Bachelor's,UX Designer,22,134545.66
+54,Male,High School,Operations Manager,18,105080.86
+49,Male,Bachelor's,Content Creator,8,80904.76
+40,Female,Master's,Engineer,5,93105.28
+37,Female,High School,Receptionist,15,88658.81
+42,Female,Master's,Software Engineer,15,116232.61
+46,Female,Master's,Sales Director,13,105663.31
+29,Male,Master's,IT Support,0,82369.42
+26,Male,Master's,Business Analyst,4,85758.6
+44,Female,Bachelor's,Sales Associate,19,125382.8
+42,Female,Master's,Sales Manager,9,111769.88
+39,Male,Bachelor's,Software Developer,2,78971.4
+43,Female,Bachelor's,Web Developer,16,112993.43
+38,Female,Bachelor's,Research Scientist,0,60688.85
+53,Male,High School,UX Designer,15,82792.98
+24,Female,Bachelor's,Project Engineer,1,58691.73
+23,Male,Bachelor's,Senior Scientist,1,61447.81
+40,Female,Master's,Sales Manager,9,109951.83
+26,Male,Bachelor's,Software Developer,1,79804.56
+26,Female,Master's,Graphic Designer,1,75199.22
+47,Female,Bachelor's,Project Engineer,18,131367.06
+38,Male,Bachelor's,Business Analyst,10,88308.19
+54,Female,Bachelor's,Content Creator,18,104563.56
+51,Male,Bachelor's,Content Creator,20,103162.15
+53,Male,Master's,Receptionist,5,108908.42
+60,Male,Master's,Senior Scientist,23,158610.51
+61,Male,Master's,Account Manager,15,146196.89
+28,Female,Bachelor's,UX Designer,0,65548.68
+28,Female,Bachelor's,Sales Manager,0,55947.03
+42,Female,High School,VP of Operations,3,55982.64
+56,Female,Bachelor's,Marketing Analyst,10,111025.28
+47,Female,Bachelor's,Financial Analyst,19,114518.09
+26,Female,High School,Research Scientist,6,58464.85
+40,Male,Master's,Marketing Coordinator,7,122860.17
+40,Female,High School,Graphic Designer,9,66672.11
+46,Female,High School,Director,17,103060.66
+38,Female,High School,Director,7,70657.33
+56,Female,Bachelor's,Financial Analyst,22,147162.56
+51,Male,High School,Sales Director,27,135012.07
+50,Female,Master's,HR Manager,3,101012.99
+59,Male,PhD,Product Manager,4,127826.52
+37,Female,Master's,Director,3,86053.16
+31,Female,Bachelor's,Data Scientist,8,79901.43
+42,Male,Master's,Data Scientist,10,121162.33
+48,Female,Master's,HR Manager,7,108885.23
+30,Female,PhD,Senior Scientist,2,119538.28
+46,Female,PhD,Project Engineer,1,108734.43
+54,Male,High School,Engineer,34,169803.05
+59,Female,Master's,Marketing Manager,16,133595.18
+39,Male,Bachelor's,Marketing Analyst,0,65682.84
+59,Female,Master's,Project Engineer,16,134092.51
+50,Female,Bachelor's,Business Analyst,0,64762.06
+47,Female,Bachelor's,UX Designer,24,125175.92
+51,Male,PhD,Marketing Analyst,3,112966.91
+30,Female,Master's,Director of Operations,5,108214.3
+64,Male,PhD,Director of Operations,16,154113.96
+34,Male,Bachelor's,Director of Operations,9,86321.16
+54,Female,Master's,Software Developer,0,92866.8
+57,Male,Master's,Sales Associate,23,155640.39
+34,Female,High School,Software Developer,8,52062.3
+26,Male,Bachelor's,Receptionist,3,71448.45
+28,Female,Bachelor's,Graphic Designer,2,77648.44
+42,Female,PhD,Operations Manager,2,118101.77
+58,Female,Bachelor's,Marketing Coordinator,28,155029.11
+42,Male,PhD,Marketing Coordinator,2,117703.45
+41,Male,Bachelor's,Graphic Designer,5,88666.56
+24,Male,Bachelor's,VP of Operations,2,75900.43
+59,Male,Master's,Financial Analyst,6,98860.17
+46,Female,Bachelor's,Product Manager,5,92125.97
+31,Male,Master's,Senior Manager,9,113816.85
+28,Male,High School,Project Engineer,0,47657.5
+33,Male,Bachelor's,Business Analyst,9,93736.07
+27,Male,Bachelor's,IT Support,1,71856.75
+23,Female,Bachelor's,Operations Manager,1,60069.54
+31,Female,Bachelor's,Sales Associate,9,96138.05
+26,Female,Bachelor's,Director of Operations,1,60505.89
+27,Female,Bachelor's,VP of Operations,5,67845.03
+47,Female,High School,Data Analyst,27,135713.27
+22,Female,Bachelor's,VP of Operations,0,61027.03
+31,Female,Bachelor's,Receptionist,3,61612.22
+37,Male,PhD,Software Developer,15,154940.47
+25,Female,Master's,Financial Analyst,2,82749.44
+36,Female,Bachelor's,Senior Manager,11,105738.56
+39,Male,Bachelor's,Sales Manager,15,100623.81
+38,Male,Bachelor's,Marketing Coordinator,7,94622.81
+33,Female,Bachelor's,UX Designer,3,80166.72
+35,Male,Master's,UX Designer,8,110949.92
+53,Male,Bachelor's,Operations Manager,9,91574.03
+49,Female,Bachelor's,Graphic Designer,24,111623.97
+59,Male,Bachelor's,Web Developer,22,140890.35
+27,Female,Bachelor's,Content Creator,2,69599.51
+53,Male,Master's,Account Manager,24,164101.86
+60,Male,PhD,Sales Manager,36,185782.58
+39,Male,High School,Sales Director,14,91151.71
+39,Male,Bachelor's,Receptionist,13,91961.17
+56,Female,Bachelor's,Director of Operations,30,179539.28
+57,Female,Master's,Software Engineer,26,160483.45
+38,Female,Master's,Sales Manager,14,131604.59
+53,Male,Master's,Project Engineer,4,106799.56
+61,Female,PhD,Web Developer,19,152064.97
+57,Male,PhD,Content Creator,1,112198.76
+56,Female,Master's,VP of Operations,1,94893.93
+25,Female,Bachelor's,Marketing Manager,1,72205.92
+55,Female,Bachelor's,Sales Manager,23,132466.22
+25,Female,High School,UX Designer,1,47850.48
+42,Male,High School,Sales Director,12,94754.39
+59,Female,Bachelor's,Marketing Manager,7,86694.8
+50,Male,Master's,Senior Manager,9,123799.53
+57,Male,Bachelor's,Engineer,14,85634.7
+32,Female,Bachelor's,UX Designer,9,75481.99
+43,Male,Bachelor's,Sales Manager,15,125025.37
+44,Female,Master's,Product Manager,5,113795.99
+58,Male,Master's,Business Analyst,19,142449.6
+53,Female,Bachelor's,Receptionist,30,158556.81
+44,Male,Bachelor's,UX Designer,16,112360.54
+34,Male,Master's,Business Analyst,11,107230.7
+51,Female,Bachelor's,Data Analyst,3,79497.81
+33,Female,Bachelor's,Marketing Coordinator,4,80838.06
+56,Male,Bachelor's,Senior Manager,10,97321.31
+29,Female,High School,Financial Analyst,2,62179.6
+29,Male,PhD,Director of Operations,6,119179.66
+40,Female,Master's,Data Scientist,17,136497.78
+26,Male,High School,Sales Director,4,53073.77
+61,Female,PhD,Director,18,152592.51
+55,Female,Bachelor's,Software Developer,33,150808.25
+35,Female,Bachelor's,Financial Analyst,7,81734.9
+33,Male,Bachelor's,Marketing Coordinator,9,84335.9
+45,Male,Master's,Receptionist,0,94059.38
+52,Female,Master's,Director of Operations,20,133221.39
+41,Female,Bachelor's,Director,1,68063.8
+45,Male,High School,IT Support,21,95870.22
+25,Female,Bachelor's,UX Designer,0,64789.53
+31,Female,Bachelor's,Graphic Designer,0,69994.24
+44,Female,Master's,Senior Scientist,22,166939.62
+59,Male,Master's,Marketing Coordinator,28,162414.06
+34,Male,Master's,UX Designer,3,91804.65
+52,Female,Bachelor's,Business Analyst,27,136804.8
+53,Female,Bachelor's,UX Designer,29,162780.16
+57,Female,Bachelor's,Director,29,137376.71
+27,Female,High School,Data Analyst,3,49575.0
+31,Female,Bachelor's,Business Analyst,8,77601.56
+28,Female,High School,UX Designer,4,57053.63
+43,Female,Bachelor's,UX Designer,15,99558.71
+56,Female,Master's,Project Engineer,12,130584.06
+49,Male,Bachelor's,Graphic Designer,10,117438.79
+60,Female,Master's,Senior Scientist,22,139358.7
+46,Female,Master's,Operations Manager,10,99531.92
+22,Female,High School,Content Creator,0,44903.28
+31,Female,Master's,Web Developer,9,118231.37
+42,Male,Bachelor's,Graphic Designer,20,144088.16
+40,Male,Bachelor's,Sales Manager,17,98912.48
+41,Male,Master's,Data Scientist,12,114920.74
+53,Female,PhD,HR Manager,15,144938.46
+45,Female,Master's,UX Designer,4,106121.72
+39,Male,PhD,Sales Associate,15,149983.73
+52,Female,Master's,Data Scientist,30,188573.65
+37,Male,Bachelor's,Data Scientist,2,79281.9
+64,Male,PhD,VP of Operations,14,171061.0
+35,Female,Master's,VP of Operations,2,95975.66
+52,Male,Master's,Software Engineer,21,133647.89
+39,Male,Bachelor's,Web Developer,4,87435.13
+46,Male,Master's,UX Designer,24,154370.21
+56,Male,Bachelor's,Content Creator,26,124662.6
+29,Female,Bachelor's,Director of Operations,7,92833.1
+36,Male,Bachelor's,VP of Operations,4,71470.43
+57,Male,Bachelor's,Operations Manager,6,87421.06
+39,Male,PhD,Marketing Manager,16,136789.41
+33,Male,Bachelor's,Account Manager,1,70422.1
+54,Male,Bachelor's,HR Manager,14,103518.07
+39,Male,PhD,Data Analyst,6,121752.29
+27,Male,High School,Software Developer,6,52282.55
+61,Female,Master's,UX Designer,32,162937.45
+50,Female,Bachelor's,Engineer,21,134937.94
+25,Male,High School,Director of Operations,3,48814.29
+23,Female,Bachelor's,Sales Associate,0,59343.32
+24,Female,Bachelor's,Marketing Manager,0,72038.29
+40,Male,High School,Data Scientist,10,72839.13
+50,Female,Bachelor's,Data Scientist,17,111090.65
+28,Female,Master's,Operations Manager,2,91551.44
+55,Male,Master's,Senior Manager,21,160309.33
+29,Female,Bachelor's,Director,5,68929.16
+40,Male,Bachelor's,Sales Associate,18,111671.63
+28,Female,Bachelor's,Business Analyst,6,88842.05
+23,Male,Bachelor's,Project Engineer,0,56856.03
+32,Female,Bachelor's,Marketing Manager,0,68819.12
+50,Male,Master's,Web Developer,26,148411.45
+55,Female,Master's,HR Manager,22,147899.98
+32,Female,Bachelor's,Director,7,81434.45
+22,Female,Bachelor's,Business Analyst,0,66065.25
+27,Male,Bachelor's,Senior Scientist,0,74221.03
+50,Female,Master's,Financial Analyst,11,127616.24
+37,Male,Master's,Sales Director,9,100787.45
+31,Male,Master's,Sales Manager,9,108397.58
+54,Male,Bachelor's,UX Designer,17,111322.53
+26,Female,High School,UX Designer,7,55743.38
+25,Female,High School,Senior Scientist,1,48734.71
+45,Female,Master's,Product Manager,2,86742.74
+52,Male,PhD,Sales Director,17,164279.18
+49,Female,Bachelor's,Account Manager,9,89699.78
+31,Female,High School,Project Engineer,1,50274.08
+22,Female,Bachelor's,Marketing Coordinator,0,56523.82
+28,Male,Bachelor's,IT Support,0,61893.08
+38,Male,Bachelor's,Operations Manager,10,101686.65
+39,Female,Master's,Data Scientist,0,100230.26
+39,Female,Master's,UX Designer,14,123956.9
+46,Male,Bachelor's,Graphic Designer,21,139512.4
+47,Male,High School,Marketing Analyst,23,118738.81
+59,Female,Bachelor's,Marketing Analyst,17,119303.57
+26,Female,High School,Software Developer,7,58013.28
+22,Female,Bachelor's,Project Engineer,0,58011.21
+49,Female,Bachelor's,Account Manager,15,94385.77
+54,Male,Master's,Software Engineer,4,102671.38
+38,Female,Bachelor's,Product Manager,7,82837.57
+40,Male,Bachelor's,Director,0,73401.34
+54,Female,PhD,Research Scientist,28,198008.48
+47,Female,Bachelor's,Financial Analyst,20,139835.62
+39,Male,Master's,UX Designer,14,141736.12
+38,Male,Bachelor's,Operations Manager,14,108771.68
+45,Female,Master's,Sales Director,10,117345.03
+46,Male,Bachelor's,UX Designer,24,128711.43
+57,Female,Master's,Data Scientist,6,110982.04
+31,Female,Master's,Business Analyst,9,102134.16
+33,Male,PhD,Senior Manager,0,104393.17
+44,Male,High School,Director of Operations,26,110195.54
+31,Female,Master's,Data Scientist,2,86768.32
+50,Female,Master's,Data Analyst,5,120323.18
+39,Male,PhD,Director of Operations,10,126430.89
+43,Female,Master's,Director of Operations,9,112985.31
+34,Female,PhD,Marketing Manager,1,122295.69
+54,Male,Master's,Director,22,164381.03
+45,Female,Master's,Graphic Designer,19,148471.28
+27,Male,Master's,Data Scientist,3,94103.27
+44,Female,PhD,Project Engineer,1,114822.89
+43,Female,High School,Sales Associate,24,95632.34
+57,Male,Bachelor's,Product Manager,32,167060.45
+45,Female,Master's,Senior Scientist,9,116391.24
+49,Male,Bachelor's,Account Manager,13,102157.61
+27,Female,High School,Director,1,47788.64
+38,Male,Master's,Research Scientist,6,103580.53
+33,Female,High School,Graphic Designer,8,59299.02
+44,Male,Bachelor's,HR Manager,3,72411.11
+48,Female,Master's,Data Scientist,17,139850.79
+58,Male,Bachelor's,Web Developer,33,174593.38
+41,Male,PhD,Marketing Manager,1,100485.25
+30,Male,Bachelor's,Research Scientist,6,75684.41
+48,Female,High School,Director,21,133448.38
+46,Male,Bachelor's,Web Developer,4,80790.71
+53,Male,Bachelor's,Research Scientist,27,156640.04
+54,Male,Bachelor's,Product Manager,11,103261.69
+46,Male,Bachelor's,Marketing Coordinator,19,122801.07
+31,Female,High School,UX Designer,13,81404.47
+58,Male,PhD,Engineer,0,115106.48
+28,Male,High School,Project Engineer,6,57511.01
+25,Female,High School,Business Analyst,2,51866.68
+41,Male,Master's,Web Developer,6,108322.0
+27,Female,Bachelor's,Senior Manager,5,77853.73
+35,Female,PhD,Project Engineer,13,151880.75
+31,Male,Bachelor's,Marketing Manager,6,77500.44
+35,Male,Bachelor's,Research Scientist,0,66305.87
+61,Female,Master's,Senior Manager,22,146947.42
+46,Female,High School,Marketing Analyst,13,88353.63
+59,Male,Master's,Research Scientist,19,129340.68
+46,Female,Bachelor's,VP of Operations,15,107522.48
+52,Female,Bachelor's,Financial Analyst,11,101403.48
+55,Male,Master's,Data Scientist,30,201329.3
+30,Female,Master's,Financial Analyst,8,97737.93
+39,Male,High School,Operations Manager,14,83587.24
+26,Female,High School,Director,8,61510.84
+60,Male,PhD,UX Designer,20,159310.16
+55,Female,Master's,Graphic Designer,22,163737.14
+52,Female,Bachelor's,Data Scientist,24,137454.37
+39,Female,Master's,Graphic Designer,6,102199.02
+43,Female,High School,Engineer,5,57606.78
+53,Male,Master's,Sales Director,7,118252.31
+50,Male,Master's,Sales Director,13,114231.72
+57,Female,Bachelor's,Product Manager,30,179199.89
+30,Male,High School,Receptionist,9,79990.26
+45,Male,High School,Sales Director,27,136945.61
+29,Male,PhD,Sales Director,4,118142.23
+33,Female,Bachelor's,IT Support,3,80115.91
+52,Male,Bachelor's,Account Manager,15,120305.81
+50,Male,High School,Project Engineer,27,135812.56
+41,Male,Master's,Research Scientist,0,85249.9
+57,Male,Bachelor's,Data Analyst,2,68946.2
+32,Male,Bachelor's,Business Analyst,10,99172.38
+44,Male,Bachelor's,Operations Manager,13,90594.05
+46,Male,Bachelor's,Senior Scientist,23,111764.33
+43,Female,High School,Financial Analyst,6,75664.22
+62,Male,PhD,Director,40,227477.26
+34,Female,PhD,Sales Director,1,112905.93
+23,Male,Bachelor's,Product Manager,1,66651.26
+38,Female,Bachelor's,Marketing Manager,4,80389.02
+37,Female,PhD,Senior Manager,11,140308.53
+46,Female,Bachelor's,Sales Manager,16,127979.34
+46,Female,High School,Project Engineer,13,70859.51
+40,Female,Master's,Director,11,112530.81
+40,Male,Bachelor's,IT Support,15,121165.56
+44,Female,Master's,Sales Director,17,122099.15
+32,Male,Master's,Senior Scientist,4,95289.51
+41,Male,Bachelor's,Marketing Manager,14,91862.99
+52,Female,PhD,Web Developer,24,201476.55
+42,Male,Bachelor's,Receptionist,9,97128.98
+58,Female,Bachelor's,Web Developer,2,78674.44
+48,Female,High School,Data Scientist,10,73159.53
+43,Male,Bachelor's,Account Manager,12,102906.44
+37,Male,Bachelor's,IT Support,2,67644.15
+54,Male,High School,Director,27,106456.42
+54,Male,Bachelor's,Project Engineer,12,120757.91
+28,Male,PhD,Graphic Designer,3,103760.46
+32,Male,Bachelor's,Director of Operations,4,79860.69
+53,Female,Bachelor's,Engineer,25,158657.07
+47,Female,Master's,IT Support,0,83662.64
+29,Male,Master's,Sales Associate,6,96064.64
+59,Male,PhD,Marketing Analyst,27,160632.92
+50,Female,Master's,Marketing Coordinator,23,157578.26
+52,Male,Master's,Research Scientist,0,86454.04
+43,Female,Master's,Sales Associate,14,109452.36
+39,Female,High School,Marketing Coordinator,21,102027.8
+33,Female,Bachelor's,HR Manager,10,96024.53
+34,Female,Master's,Marketing Manager,10,113699.51
+39,Male,Bachelor's,Content Creator,2,82242.42
+36,Female,Bachelor's,Marketing Coordinator,3,87308.78
+47,Male,Master's,Receptionist,8,116492.79
+35,Male,Master's,Sales Director,12,124101.7
+34,Male,High School,Director,7,70370.21
+50,Female,High School,Product Manager,11,81898.58
+36,Female,Master's,Operations Manager,11,116753.66
+40,Female,Master's,Graphic Designer,7,96502.14
+30,Male,Master's,Director of Operations,3,97295.55
+45,Female,Bachelor's,Software Developer,19,113671.06
+25,Male,Bachelor's,Sales Manager,2,75140.73
+42,Female,Bachelor's,Marketing Analyst,4,78232.2
+43,Male,Bachelor's,Content Creator,1,73215.38
+34,Male,High School,Research Scientist,11,66082.36
+23,Male,High School,Product Manager,0,46204.04
+48,Male,Master's,Content Creator,26,138884.0
+60,Male,Master's,Web Developer,7,108199.96
+26,Female,Bachelor's,Financial Analyst,1,62476.94
+38,Female,Master's,Senior Manager,9,111131.72
+22,Female,High School,Director of Operations,1,38068.62
+37,Female,Bachelor's,Senior Manager,7,82596.57
+29,Female,Master's,UX Designer,3,87017.86
+38,Female,PhD,Engineer,9,138082.69
+36,Male,High School,Director,9,72809.27
+57,Female,Master's,Product Manager,3,94143.33
+35,Male,PhD,Receptionist,5,118143.8
+57,Female,Master's,Product Manager,0,105368.48
+33,Female,Master's,Marketing Manager,2,94025.9
+25,Male,Bachelor's,Data Scientist,1,64971.84
+59,Male,Master's,Software Developer,10,136039.45
+43,Male,PhD,Sales Associate,4,121775.89
+37,Female,Bachelor's,Product Manager,0,66996.11
+46,Female,Bachelor's,Research Scientist,14,101788.97
+35,Female,High School,HR Manager,7,66766.51
+49,Male,PhD,Operations Manager,10,134821.12
+37,Female,Master's,Marketing Manager,9,107225.23
+27,Male,Bachelor's,Director,5,76862.36
+43,Male,Bachelor's,Product Manager,3,82006.12
+51,Female,Bachelor's,Director of Operations,6,98874.61
+35,Female,High School,Sales Director,5,62223.58
+48,Male,Master's,Operations Manager,11,123431.08
+37,Male,Bachelor's,HR Manager,3,71199.66
+44,Female,Bachelor's,Project Engineer,9,93212.7
+54,Male,PhD,Receptionist,32,204247.24
+46,Female,Bachelor's,Director of Operations,10,97823.2
+28,Male,High School,Web Developer,6,62271.05
+61,Female,Master's,Software Developer,3,102729.44
+24,Female,Bachelor's,Marketing Manager,2,66597.2
+52,Male,PhD,Marketing Analyst,17,138802.32
+32,Male,Bachelor's,Software Engineer,8,90749.22
+40,Female,Master's,HR Manager,12,122982.37
+55,Male,Master's,Marketing Manager,13,121489.95
+60,Female,PhD,Web Developer,2,125880.37
+37,Male,PhD,HR Manager,14,156568.22
+42,Female,Bachelor's,Research Scientist,17,122373.02
+39,Female,Master's,Product Manager,14,124404.5
+37,Male,Bachelor's,Data Analyst,7,99061.64
+33,Female,Bachelor's,HR Manager,7,95324.99
+23,Female,Bachelor's,Web Developer,0,66000.03
+54,Female,Master's,Data Analyst,9,117034.21
+24,Male,Bachelor's,Director,2,62402.56
+56,Male,Master's,Software Engineer,11,118257.3
+36,Male,Bachelor's,UX Designer,1,76306.26
+29,Female,Bachelor's,HR Manager,4,69303.97
+35,Male,Bachelor's,HR Manager,11,96149.09
+36,Male,Bachelor's,Project Engineer,1,72542.29
+59,Female,Master's,Senior Manager,8,130970.23
+31,Female,Master's,Graphic Designer,5,94959.72
+37,Female,High School,Account Manager,16,90311.47
+53,Female,Master's,Software Engineer,19,155977.48
+33,Male,PhD,HR Manager,5,128623.75
+56,Male,Bachelor's,Business Analyst,1,79604.29
+30,Female,Master's,UX Designer,1,88206.51
+50,Female,Bachelor's,Marketing Manager,19,108376.41
+59,Male,Master's,HR Manager,26,174654.59
+53,Male,Master's,Sales Manager,17,147076.41
+36,Female,Master's,Software Engineer,7,105667.67
+50,Male,High School,Software Developer,12,95752.14
+35,Male,Bachelor's,Content Creator,7,84411.86
+54,Male,Master's,Content Creator,9,125888.93
+48,Male,Bachelor's,Data Scientist,19,121783.95
+58,Male,Master's,Graphic Designer,4,110097.19
+42,Male,Bachelor's,Software Engineer,14,112332.68
+42,Female,Bachelor's,Account Manager,9,90834.21
+49,Male,Bachelor's,Director,26,174820.77
+54,Female,Master's,Product Manager,18,150473.31
+32,Female,Bachelor's,Senior Manager,3,67949.55
+43,Female,Bachelor's,VP of Operations,10,97620.68
+44,Female,Bachelor's,Product Manager,22,126576.05
+59,Male,Master's,Software Developer,36,173414.22
+25,Male,Bachelor's,Director,3,64356.54
+26,Female,Bachelor's,Sales Manager,0,56673.24
+36,Male,Master's,Marketing Analyst,13,131503.47
+47,Female,Bachelor's,Sales Associate,0,79318.05
+44,Female,Bachelor's,Content Creator,4,84044.93
+51,Female,Bachelor's,Engineer,10,109756.56
+32,Male,Master's,Project Engineer,7,99065.66
+24,Female,High School,Receptionist,4,48900.09
+53,Male,Bachelor's,Operations Manager,20,136051.59

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SalaryPredict — Prediksi Gaji Karyawan dengan AI</title>
+  <meta name="description" content="Aplikasi prediksi gaji karyawan berdasarkan pengalaman kerja dan tingkat pendidikan menggunakan metode Regresi Linier Berganda.">
+  <meta name="keywords" content="salary prediction, prediksi gaji, machine learning, regresi linier, data science">
+  <meta name="author" content="Kelompok Data Science — UBSI">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-logo">
+        <span class="logo-icon">💰</span>
+        <span class="logo-text">Salary<span class="logo-highlight">Predict</span></span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active" data-section="home">Beranda</a></li>
+        <li><a href="#predict" class="nav-link" data-section="predict">Prediksi</a></li>
+        <li><a href="#visualize" class="nav-link" data-section="visualize">Visualisasi</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">Tentang</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO / HOME ========== -->
+  <section class="section hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-particles" id="hero-particles"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge animate-fade-in">
+        <span class="badge-dot"></span>
+        AI-Powered Prediction
+      </div>
+      <h1 class="hero-title animate-fade-in-up">
+        Prediksi <span class="gradient-text">Gaji Karyawan</span><br>
+        dengan Machine Learning
+      </h1>
+      <p class="hero-subtitle animate-fade-in-up delay-1">
+        Aplikasi berbasis web yang menggunakan model <strong>Regresi Linier Berganda</strong> 
+        untuk memprediksi gaji karyawan berdasarkan pengalaman kerja, tingkat pendidikan, dan usia.
+      </p>
+      <div class="hero-stats animate-fade-in-up delay-2">
+        <div class="stat-card">
+          <span class="stat-value" data-count="1000">0</span>
+          <span class="stat-label">Data Training</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">91.78%</span>
+          <span class="stat-label">Akurasi (R²)</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">7.08%</span>
+          <span class="stat-label">Error (MAPE)</span>
+        </div>
+      </div>
+      <div class="hero-cta animate-fade-in-up delay-3">
+        <a href="#predict" class="btn btn-primary btn-lg">
+          <i data-lucide="sparkles"></i>
+          Mulai Prediksi
+        </a>
+        <a href="#about" class="btn btn-outline btn-lg">
+          <i data-lucide="info"></i>
+          Pelajari Lebih Lanjut
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <a href="#predict">
+        <i data-lucide="chevrons-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== PREDICTION ========== -->
+  <section class="section" id="predict">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">
+          <i data-lucide="brain"></i> AI Prediction
+        </span>
+        <h2 class="section-title">Prediksi Gaji</h2>
+        <p class="section-desc">Masukkan data di bawah untuk mendapatkan prediksi gaji berdasarkan model Regresi Linier Berganda</p>
+      </div>
+
+      <div class="predict-grid">
+        <!-- Input Panel -->
+        <div class="predict-card input-card">
+          <div class="card-header">
+            <i data-lucide="sliders-horizontal"></i>
+            <h3>Input Data</h3>
+          </div>
+          <form id="predict-form" class="predict-form">
+            <!-- Experience -->
+            <div class="form-group">
+              <label for="experience">
+                <i data-lucide="briefcase"></i>
+                Pengalaman Kerja
+              </label>
+              <div class="slider-group">
+                <input type="range" id="experience" name="experience" min="0" max="40" value="5" class="range-slider">
+                <div class="slider-value-display">
+                  <span id="experience-value" class="slider-value">5</span>
+                  <span class="slider-unit">tahun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div class="form-group">
+              <label>
+                <i data-lucide="graduation-cap"></i>
+                Tingkat Pendidikan
+              </label>
+              <div class="education-cards" id="education-cards">
+                <button type="button" class="edu-card" data-value="0">
+                  <span class="edu-icon">🏫</span>
+                  <span class="edu-label">SMA</span>
+                </button>
+                <button type="button" class="edu-card active" data-value="1">
+                  <span class="edu-icon">🎓</span>
+                  <span class="edu-label">S1</span>
+                </button>
+                <button type="button" class="edu-card" data-value="2">
+                  <span class="edu-icon">📚</span>
+                  <span class="edu-label">S2</span>
+                </button>
+                <button type="button" class="edu-card" data-value="3">
+                  <span class="edu-icon">🔬</span>
+                  <span class="edu-label">S3</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+              <label for="age">
+                <i data-lucide="user"></i>
+                Usia
+              </label>
+              <div class="slider-group">
+                <input type="range" id="age" name="age" min="18" max="65" value="25" class="range-slider">
+                <div class="slider-value-display">
+                  <span id="age-value" class="slider-value">25</span>
+                  <span class="slider-unit">tahun</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="predict-btn">
+              <i data-lucide="sparkles"></i>
+              Prediksi Gaji
+            </button>
+          </form>
+        </div>
+
+        <!-- Result Panel -->
+        <div class="predict-card result-card" id="result-card">
+          <div class="card-header">
+            <i data-lucide="trending-up"></i>
+            <h3>Hasil Prediksi</h3>
+          </div>
+          
+          <!-- Placeholder -->
+          <div class="result-placeholder" id="result-placeholder">
+            <div class="placeholder-icon">
+              <i data-lucide="arrow-left"></i>
+            </div>
+            <p>Masukkan data di sebelah kiri dan klik <strong>"Prediksi Gaji"</strong> untuk melihat hasilnya</p>
+          </div>
+
+          <!-- Actual Result -->
+          <div class="result-content hidden" id="result-content">
+            <div class="result-salary-display">
+              <span class="result-label">Perkiraan Gaji per Tahun</span>
+              <div class="salary-amount">
+                <span class="currency">$</span>
+                <span class="salary-number" id="salary-result">0</span>
+              </div>
+              <div class="salary-monthly">
+                ≈ <span id="salary-monthly">0</span> / bulan
+              </div>
+            </div>
+
+            <div class="result-details">
+              <div class="detail-item">
+                <span class="detail-label">Pengalaman</span>
+                <span class="detail-value" id="detail-exp">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Pendidikan</span>
+                <span class="detail-value" id="detail-edu">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Usia</span>
+                <span class="detail-value" id="detail-age">-</span>
+              </div>
+            </div>
+
+            <div class="result-model-info">
+              <div class="model-badge">
+                <i data-lucide="check-circle"></i>
+                R² Score: <strong>0.9178</strong>
+              </div>
+              <p class="model-formula" id="model-formula"></p>
+            </div>
+
+            <div class="result-comparison">
+              <h4>Perbandingan per Tingkat Pendidikan</h4>
+              <canvas id="comparison-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- History -->
+      <div class="history-section" id="history-section">
+        <div class="card-header">
+          <i data-lucide="history"></i>
+          <h3>Riwayat Prediksi</h3>
+          <button class="btn btn-sm btn-ghost" id="clear-history">
+            <i data-lucide="trash-2"></i> Hapus
+          </button>
+        </div>
+        <div class="history-list" id="history-list">
+          <p class="history-empty">Belum ada riwayat prediksi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VISUALIZATION ========== -->
+  <section class="section" id="visualize">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">
+          <i data-lucide="bar-chart-3"></i> Data Visualization
+        </span>
+        <h2 class="section-title">Visualisasi Data</h2>
+        <p class="section-desc">Eksplorasi visual hubungan antara variabel-variabel dalam dataset</p>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h4><i data-lucide="bar-chart-2"></i> Rata-Rata Gaji per Pendidikan</h4>
+          <canvas id="chart-edu-salary"></canvas>
+        </div>
+        <div class="chart-card">
+          <h4><i data-lucide="pie-chart"></i> Distribusi Tingkat Pendidikan</h4>
+          <canvas id="chart-edu-dist"></canvas>
+        </div>
+        <div class="chart-card chart-wide">
+          <h4><i data-lucide="trending-up"></i> Prediksi Gaji vs Pengalaman Kerja</h4>
+          <canvas id="chart-exp-salary"></canvas>
+        </div>
+      </div>
+
+      <!-- Dataset Stats -->
+      <div class="stats-grid">
+        <div class="mini-stat">
+          <div class="mini-stat-icon"><i data-lucide="database"></i></div>
+          <div>
+            <span class="mini-stat-value">1,000</span>
+            <span class="mini-stat-label">Total Data Sample</span>
+          </div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-icon"><i data-lucide="dollar-sign"></i></div>
+          <div>
+            <span class="mini-stat-value">$104,783</span>
+            <span class="mini-stat-label">Rata-Rata Gaji</span>
+          </div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-icon"><i data-lucide="briefcase"></i></div>
+          <div>
+            <span class="mini-stat-value">10.4 thn</span>
+            <span class="mini-stat-label">Rata-Rata Pengalaman</span>
+          </div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-icon"><i data-lucide="target"></i></div>
+          <div>
+            <span class="mini-stat-value">91.78%</span>
+            <span class="mini-stat-label">Model Accuracy (R²)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">
+          <i data-lucide="book-open"></i> About Project
+        </span>
+        <h2 class="section-title">Tentang Proyek</h2>
+        <p class="section-desc">Informasi lengkap tentang jurnal, metodologi, dan tim pengembang</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Journal Info -->
+        <div class="about-card">
+          <div class="about-card-icon">📄</div>
+          <h3>Jurnal Ilmiah</h3>
+          <h4 class="journal-title">"Prediksi Gaji Karyawan Berdasarkan Pengalaman Kerja dan Tingkat Pendidikan Menggunakan Metode Regresi Linier Berganda"</h4>
+          <p>Format: IJCCS/JATISI — Template jurnal ilmiah standar nasional</p>
+        </div>
+
+        <!-- Dataset Info -->
+        <div class="about-card">
+          <div class="about-card-icon">📊</div>
+          <h3>Dataset</h3>
+          <table class="about-table">
+            <tr><td>Sumber</td><td>Kaggle — Salary Prediction for Beginner</td></tr>
+            <tr><td>Pembuat</td><td>Rkiattisak</td></tr>
+            <tr><td>Total Data</td><td>6,000 baris → Disampel 1,000</td></tr>
+            <tr><td>Fitur</td><td>Age, Gender, Education, Experience</td></tr>
+            <tr><td>Target</td><td>Salary (USD/tahun)</td></tr>
+          </table>
+          <a href="https://www.kaggle.com/datasets/rkiattisak/salaly-prediction-for-beginer" target="_blank" class="btn btn-sm btn-outline" style="margin-top: 1rem">
+            <i data-lucide="external-link"></i> Lihat di Kaggle
+          </a>
+        </div>
+
+        <!-- Methodology -->
+        <div class="about-card">
+          <div class="about-card-icon">🧪</div>
+          <h3>Metodologi</h3>
+          <div class="method-steps">
+            <div class="method-step">
+              <span class="step-num">1</span>
+              <div>
+                <strong>CRISP-DM</strong>
+                <p>Business Understanding → Data Understanding → Data Preparation → Modeling → Evaluation → Deployment</p>
+              </div>
+            </div>
+            <div class="method-step">
+              <span class="step-num">2</span>
+              <div>
+                <strong>Regresi Linier Berganda</strong>
+                <p>Y = β₀ + β₁X₁ + β₂X₂ + β₃X₃</p>
+              </div>
+            </div>
+            <div class="method-step">
+              <span class="step-num">3</span>
+              <div>
+                <strong>Evaluasi</strong>
+                <p>R², RMSE, MAE, MAPE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model Performance -->
+        <div class="about-card">
+          <div class="about-card-icon">🎯</div>
+          <h3>Performa Model</h3>
+          <table class="about-table">
+            <tr><td>R² Score</td><td><strong>0.9178</strong> <span class="tag tag-green">Sangat Baik</span></td></tr>
+            <tr><td>RMSE</td><td>$9,131.48</td></tr>
+            <tr><td>MAE</td><td>$7,173.66</td></tr>
+            <tr><td>MAPE</td><td><strong>7.08%</strong> <span class="tag tag-green">< 10%</span></td></tr>
+            <tr><td>Train / Test</td><td>80% / 20% (800 / 200)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- Team -->
+      <div class="team-section">
+        <h3 class="team-title">
+          <i data-lucide="users"></i> Tim Pengembang
+        </h3>
+        <p class="team-subtitle">Mahasiswa Informatika — Universitas Bina Sarana Informatika</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar">YH</div>
+            <h4>Yusuf Herfa</h4>
+            <span class="team-role">Integrasi AI & Koordinator</span>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">R</div>
+            <h4>Rizqi</h4>
+            <span class="team-role">Training Model</span>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">YM</div>
+            <h4>Yusuf M.</h4>
+            <span class="team-role">UI Prediksi & Visualisasi</span>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">M</div>
+            <h4>Mabel</h4>
+            <span class="team-role">UI Home & Tentang</span>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar">Y</div>
+            <h4>Yogi</h4>
+            <span class="team-role">Setup & Deployment</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula -->
+      <div class="formula-card">
+        <h3>📐 Rumus Prediksi</h3>
+        <div class="formula-display">
+          <code>Salary = 35,506.73 + (2,562.53 × Experience) + (19,515.92 × Education) + (372.29 × Age)</code>
+        </div>
+        <div class="formula-legend">
+          <span><strong>β₀</strong> = 35,506.73 (intercept)</span>
+          <span><strong>β₁</strong> = 2,562.53 (pengalaman kerja)</span>
+          <span><strong>β₂</strong> = 19,515.92 (tingkat pendidikan)</span>
+          <span><strong>β₃</strong> = 372.29 (usia)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">💰</span>
+          <span class="logo-text">Salary<span class="logo-highlight">Predict</span></span>
+          <p>Prediksi Gaji Karyawan dengan AI — Proyek Mata Kuliah Data Science</p>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Beranda</a>
+          <a href="#predict">Prediksi</a>
+          <a href="#visualize">Visualisasi</a>
+          <a href="#about">Tentang</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SalaryPredict — Universitas Bina Sarana Informatika</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/model.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

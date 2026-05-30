@@ -1,0 +1,30 @@
+{
+  "salary": {
+    "min": 38068.62,
+    "max": 227477.26,
+    "mean": 104783.43,
+    "median": 102080.98
+  },
+  "experience": {
+    "min": 0,
+    "max": 40,
+    "mean": 10.42
+  },
+  "age": {
+    "min": 22,
+    "max": 64,
+    "mean": 42.02
+  },
+  "education_distribution": {
+    "Bachelor's": 453,
+    "Master's": 308,
+    "High School": 134,
+    "PhD": 105
+  },
+  "avg_salary_by_education": {
+    "Bachelor's": 94952.81,
+    "High School": 77504.96,
+    "Master's": 119470.14,
+    "PhD": 138927.06
+  }
+}

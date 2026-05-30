@@ -1,0 +1,34 @@
+{
+  "intercept": 35506.73,
+  "coefficients": {
+    "years_of_experience": 2562.53,
+    "education_level": 19515.92,
+    "age": 372.29
+  },
+  "education_mapping": {
+    "High School": 0,
+    "Bachelor's": 1,
+    "Master's": 2,
+    "PhD": 3
+  },
+  "metrics": {
+    "r2_score": 0.9178,
+    "rmse": 9131.48,
+    "mae": 7173.66,
+    "mape": 7.08
+  },
+  "dataset_info": {
+    "source": "Kaggle - Salary Prediction for Beginner (rkiattisak)",
+    "total_data": 6000,
+    "sampled_data": 1000,
+    "train_size": 800,
+    "test_size": 200,
+    "features": [
+      "Years of Experience",
+      "Education Level",
+      "Age"
+    ],
+    "target": "Salary (USD)"
+  },
+  "formula": "Salary = 35506.73 + (2562.53 \u00d7 Experience) + (19515.92 \u00d7 Education) + (372.29 \u00d7 Age)"
+}
