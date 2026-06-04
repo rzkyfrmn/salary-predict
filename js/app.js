@@ -195,10 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Color arrays based on active education
         const bgColors = labels.map((l, i) => 
-            i === state.education ? 'rgba(99, 102, 241, 0.7)' : 'rgba(255, 255, 255, 0.08)'
+            i === state.education ? 'rgba(99, 102, 241, 0.7)' : 'rgba(107, 114, 128, 0.2)'
         );
         const borderColors = labels.map((l, i) => 
-            i === state.education ? 'rgba(99, 102, 241, 1)' : 'rgba(255, 255, 255, 0.15)'
+            i === state.education ? 'rgba(99, 102, 241, 1)' : 'rgba(107, 114, 128, 0.4)'
         );
 
         if (comparisonChart) comparisonChart.destroy();
@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scales: {
                     y: {
                         beginAtZero: false,
-                        grid: { color: 'rgba(255, 255, 255, 0.04)', drawBorder: false },
+                        grid: { color: 'rgba(107, 114, 128, 0.1)', drawBorder: false },
                         ticks: { 
                             color: '#6b7280',
                             font: { size: 11 },
