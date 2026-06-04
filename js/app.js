@@ -181,6 +181,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const labels = data.map(d => d.label);
         const values = data.map(d => d.salary);
         
+        // Color arrays based on active education
+        const bgColors = labels.map((l, i) => 
+            i === state.education ? 'rgba(99, 102, 241, 0.7)' : 'rgba(255, 255, 255, 0.08)'
+        );
+        const borderColors = labels.map((l, i) => 
+            i === state.education ? 'rgba(99, 102, 241, 1)' : 'rgba(255, 255, 255, 0.15)'
+        );
+
         if (comparisonChart) comparisonChart.destroy();
         
         comparisonChart = new Chart(ctx, {
@@ -190,42 +198,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 datasets: [{
                     label: 'Prediksi Gaji ($)',
                     data: values,
-                    backgroundColor: [
-                        'rgba(99, 102, 241, 0.2)',
-                        'rgba(99, 102, 241, 0.8)',
-                        'rgba(99, 102, 241, 0.2)',
-                        'rgba(99, 102, 241, 0.2)'
-                    ],
-                    borderColor: 'rgba(99, 102, 241, 1)',
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
                     borderWidth: 1,
-                    borderRadius: 6
+                    borderRadius: 8,
+                    barPercentage: 0.6,
+                    categoryPercentage: 0.7
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: { display: false }
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return '$ ' + context.parsed.y.toLocaleString('en-US', { maximumFractionDigits: 0 });
+                            }
+                        },
+                        backgroundColor: 'rgba(18, 18, 23, 0.95)',
+                        borderColor: 'rgba(99, 102, 241, 0.3)',
+                        borderWidth: 1,
+                        titleColor: '#f3f4f6',
+                        bodyColor: '#818cf8',
+                        bodyFont: { weight: '700', size: 14 },
+                        padding: 12,
+                        cornerRadius: 8
+                    }
                 },
                 scales: {
                     y: {
-                        beginAtZero: true,
-                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
-                        ticks: { color: '#9ca3af' }
+                        beginAtZero: false,
+                        grid: { color: 'rgba(255, 255, 255, 0.04)', drawBorder: false },
+                        ticks: { 
+                            color: '#6b7280',
+                            font: { size: 11 },
+                            callback: function(value) {
+                                return '$' + (value / 1000).toFixed(0) + 'k';
+                            },
+                            maxTicksLimit: 5
+                        },
+                        border: { display: false }
                     },
                     x: {
                         grid: { display: false },
-                        ticks: { color: '#9ca3af' }
+                        ticks: { 
+                            color: '#9ca3af',
+                            font: { size: 12, weight: '600' }
+                        },
+                        border: { display: false }
                     }
                 }
             }
         });
-
-        // Set active color for current selection
-        comparisonChart.data.datasets[0].backgroundColor = labels.map((l, i) => 
-            i === state.education ? 'rgba(99, 102, 241, 0.8)' : 'rgba(255, 255, 255, 0.1)'
-        );
-        comparisonChart.update();
     }
 
     function initVisualizationCharts() {

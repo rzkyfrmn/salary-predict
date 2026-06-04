@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html lang="id" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SalaryVision — Machine Learning Salary Predictor</title>
-  <meta name="description" content="Aplikasi web berbasis Machine Learning (Regresi Linier Berganda) untuk memprediksi standar gaji tech talent.">
-  <meta name="keywords" content="salary prediction, prediksi gaji, machine learning, regresi linier, data science, bootcamp">
+  <meta name="description"
+    content="Aplikasi web berbasis Machine Learning (Regresi Linier Berganda) untuk memprediksi standar gaji tech talent.">
+  <meta name="keywords"
+    content="salary prediction, prediksi gaji, machine learning, regresi linier, data science, bootcamp">
   <meta name="author" content="Tim Bootcamp IT 2026">
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
-  
+
   <!-- QRCode.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-  
+
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <!-- Navbar Section -->
   <nav class="navbar" id="navbar">
@@ -80,7 +86,7 @@
         dengan Machine Learning
       </h1>
       <p class="hero-subtitle animate-fade-in-up delay-1">
-        Kepo berapa valuasi keahlianmu? Masukkan profil pendidikan dan pengalaman kerja, 
+        Kepo berapa valuasi keahlianmu? Masukkan profil pendidikan dan pengalaman kerja,
         biar model <strong>Regresi Linier Berganda</strong> kami yang melakukan kalkulasinya!
       </p>
       <div class="hero-stats animate-fade-in-up delay-2">
@@ -123,7 +129,8 @@
           <i data-lucide="brain"></i> AI Prediction
         </span>
         <h2 class="section-title">Prediksi Gaji</h2>
-        <p class="section-desc">Masukkan data di bawah untuk mendapatkan prediksi gaji berdasarkan model Regresi Linier Berganda</p>
+        <p class="section-desc">Masukkan data di bawah untuk mendapatkan prediksi gaji berdasarkan model Regresi Linier
+          Berganda</p>
       </div>
 
       <div class="predict-grid">
@@ -203,7 +210,7 @@
             <i data-lucide="trending-up"></i>
             <h3>Hasil Prediksi</h3>
           </div>
-          
+
           <!-- Placeholder -->
           <div class="result-placeholder" id="result-placeholder">
             <div class="placeholder-icon">
@@ -250,7 +257,9 @@
 
             <div class="result-comparison">
               <h4>Perbandingan per Tingkat Pendidikan</h4>
-              <canvas id="comparison-chart"></canvas>
+              <div style="position: relative; height: 220px; width: 100%;">
+                <canvas id="comparison-chart"></canvas>
+              </div>
             </div>
           </div>
         </div>
@@ -357,13 +366,29 @@
           <div class="about-card-icon">📊</div>
           <h3>Dataset</h3>
           <table class="about-table">
-            <tr><td>Sumber</td><td>Kaggle — Salary Prediction for Beginner</td></tr>
-            <tr><td>Pembuat</td><td>Rkiattisak</td></tr>
-            <tr><td>Total Data</td><td>6,000 baris → Disampel 1,000</td></tr>
-            <tr><td>Fitur</td><td>Age, Gender, Education, Experience</td></tr>
-            <tr><td>Target</td><td>Salary (USD/tahun)</td></tr>
+            <tr>
+              <td>Sumber</td>
+              <td>Kaggle — Salary Prediction for Beginner</td>
+            </tr>
+            <tr>
+              <td>Pembuat</td>
+              <td>Rkiattisak</td>
+            </tr>
+            <tr>
+              <td>Total Data</td>
+              <td>6,000 baris → Disampel 1,000</td>
+            </tr>
+            <tr>
+              <td>Fitur</td>
+              <td>Age, Gender, Education, Experience</td>
+            </tr>
+            <tr>
+              <td>Target</td>
+              <td>Salary (USD/tahun)</td>
+            </tr>
           </table>
-          <a href="https://www.kaggle.com/datasets/rkiattisak/salaly-prediction-for-beginer" target="_blank" class="btn btn-sm btn-outline" style="margin-top: 1rem">
+          <a href="https://www.kaggle.com/datasets/rkiattisak/salaly-prediction-for-beginer" target="_blank"
+            class="btn btn-sm btn-outline" style="margin-top: 1rem">
             <i data-lucide="external-link"></i> Lihat di Kaggle
           </a>
         </div>
@@ -377,7 +402,8 @@
               <span class="step-num">1</span>
               <div>
                 <strong>CRISP-DM</strong>
-                <p>Business Understanding → Data Understanding → Data Preparation → Modeling → Evaluation → Deployment</p>
+                <p>Business Understanding → Data Understanding → Data Preparation → Modeling → Evaluation → Deployment
+                </p>
               </div>
             </div>
             <div class="method-step">
@@ -402,11 +428,28 @@
           <div class="about-card-icon">🎯</div>
           <h3>Performa Model</h3>
           <table class="about-table">
-            <tr><td>R² Score</td><td><strong>0.9178</strong> <span class="tag tag-green">Sangat Baik</span></td></tr>
-            <tr><td>RMSE</td><td>$9,131.48</td></tr>
-            <tr><td>MAE</td><td>$7,173.66</td></tr>
-            <tr><td>MAPE</td><td><strong>7.08%</strong> <span class="tag tag-green">< 10%</span></td></tr>
-            <tr><td>Train / Test</td><td>80% / 20% (800 / 200)</td></tr>
+            <tr>
+              <td>R² Score</td>
+              <td><strong>0.9178</strong> <span class="tag tag-green">Sangat Baik</span></td>
+            </tr>
+            <tr>
+              <td>RMSE</td>
+              <td>$9,131.48</td>
+            </tr>
+            <tr>
+              <td>MAE</td>
+              <td>$7,173.66</td>
+            </tr>
+            <tr>
+              <td>MAPE</td>
+              <td><strong>7.08%</strong> <span class="tag tag-green">
+                  < 10%</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Train / Test</td>
+              <td>80% / 20% (800 / 200)</td>
+            </tr>
           </table>
         </div>
       </div>
@@ -498,4 +541,5 @@
   <script src="js/model.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>
