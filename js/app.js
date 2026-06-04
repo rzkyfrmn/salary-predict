@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         experience: 5,
         education: 1, // Default S1
         age: 25,
+        gender: 0, // Default Pria
+        jobTitle: 'Software Developer', // Default
         history: JSON.parse(localStorage.getItem('salary_predict_history') || '[]')
     };
 
@@ -25,7 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const expValue = document.getElementById('experience-value');
     const ageInput = document.getElementById('age');
     const ageValue = document.getElementById('age-value');
-    const eduCards = document.querySelectorAll('.edu-card');
+    const eduCards = document.querySelectorAll('#education-cards .edu-card');
+    const genderCards = document.querySelectorAll('#gender-cards .edu-card');
+    const jobDropdown = document.getElementById('job-dropdown');
+    const jobSelected = document.getElementById('job-selected');
+    const jobSelectedText = document.getElementById('job-selected-text');
+    const jobOptions = document.querySelectorAll('#job-options .dropdown-option');
     
     const resultPlaceholder = document.getElementById('result-placeholder');
     const resultContent = document.getElementById('result-content');
@@ -34,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailExp = document.getElementById('detail-exp');
     const detailEdu = document.getElementById('detail-edu');
     const detailAge = document.getElementById('detail-age');
+    const detailJob = document.getElementById('detail-job');
+    const detailGender = document.getElementById('detail-gender');
     const modelFormula = document.getElementById('model-formula');
     
     const historyList = document.getElementById('history-list');
@@ -124,6 +133,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Gender Cards Selection
+    if(genderCards) {
+        genderCards.forEach(card => {
+            card.addEventListener('click', () => {
+                genderCards.forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                state.gender = parseInt(card.dataset.value);
+            });
+        });
+    }
+
+    // Custom Job Title Dropdown
+    if (jobSelected && jobDropdown) {
+        jobSelected.addEventListener('click', (e) => {
+            e.stopPropagation();
+            jobDropdown.classList.toggle('open');
+            jobSelected.classList.toggle('open');
+        });
+    }
+
+    if (jobOptions) {
+        jobOptions.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Update active class on option elements
+                jobOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                
+                // Update selected text and state
+                const value = option.dataset.value;
+                state.jobTitle = value;
+                if (jobSelectedText) {
+                    jobSelectedText.textContent = value;
+                }
+                
+                // Close dropdown
+                if (jobDropdown) jobDropdown.classList.remove('open');
+                if (jobSelected) jobSelected.classList.remove('open');
+            });
+        });
+    }
+
     // ========== PREDICTION LOGIC ==========
 
     if(predictForm) {
@@ -131,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             // 1. Calculate Prediction
-            const salary = MODEL.predict(state.experience, state.education, state.age);
+            const salary = MODEL.predict(state.experience, state.education, state.age, state.gender, state.jobTitle);
             
             // 2. Update UI Result
             resultPlaceholder.classList.add('hidden');
@@ -152,9 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
             detailExp.textContent = `${state.experience} tahun`;
             detailEdu.textContent = MODEL.educationShort[state.education];
             detailAge.textContent = `${state.age} tahun`;
+            detailJob.textContent = state.jobTitle;
+            detailGender.textContent = state.gender === 0 ? "Pria" : "Wanita";
 
             // 3. Render Comparison Chart
-            renderComparisonChart(state.experience, state.age);
+            renderComparisonChart(state.experience, state.age, state.gender, state.jobTitle);
 
             // 4. Save to History
             addToHistory(salary);
@@ -223,11 +276,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ========== CHARTS RENDERING ==========
 
-    function renderComparisonChart(experience, age) {
+    function renderComparisonChart(experience, age, gender = 0, jobTitle = "Software Developer") {
         const canvaEl = document.getElementById('comparison-chart');
         if(!canvaEl) return;
         const ctx = canvaEl.getContext('2d');
-        const data = MODEL.predictAll(experience, age);
+        const data = MODEL.predictAll(experience, age, gender, jobTitle);
         
         const labels = data.map(d => d.label);
         const values = data.map(d => d.salary);
@@ -385,6 +438,8 @@ document.addEventListener('DOMContentLoaded', () => {
             exp: state.experience,
             edu: MODEL.educationShort[state.education],
             age: state.age,
+            job: state.jobTitle,
+            gender: state.gender === 0 ? "Pria" : "Wanita",
             date: new Date().toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' })
         };
         
@@ -408,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="history-info">
                     <strong>$${item.salary.toLocaleString()}</strong>
                     <span style="font-size: 0.75rem; color: var(--text-gray-500); margin-left: 10px;">
-                        ${item.edu} &bull; ${item.exp} thn &bull; ${item.age} thn
+                        ${item.job} &bull; ${item.edu} &bull; ${item.exp} thn &bull; ${item.age} thn
                     </span>
                 </div>
                 <span style="font-size: 0.75rem; color: var(--text-gray-500);">${item.date}</span>
@@ -452,10 +507,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Close modal on outside click
+    // Close modal and custom dropdown on outside click
     window.addEventListener('click', (e) => {
-        if(e.target === qrModal) {
+        if(qrModal && e.target === qrModal) {
             qrModal.classList.add('hidden');
+        }
+        
+        // Close job dropdown if clicked outside
+        if (jobDropdown && jobSelected && !jobDropdown.contains(e.target)) {
+            jobDropdown.classList.remove('open');
+            jobSelected.classList.remove('open');
         }
     });
 

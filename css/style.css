@@ -355,6 +355,99 @@ img { max-width: 100%; height: auto; }
 .form-group label { display: flex; align-items: center; gap: 8px; font-size: 0.9375rem; font-weight: 600; margin-bottom: 12px; color: var(--text-gray-300); }
 .form-group label i { width: 18px; color: var(--primary-light); }
 
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  user-select: none;
+}
+.dropdown-selected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-dark-800);
+  border: 1px solid var(--border-color);
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text-gray-100);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.dropdown-selected:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+.dropdown-selected.open {
+  border-color: var(--primary);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.dropdown-selected i {
+  transition: transform 0.3s ease;
+  color: var(--text-gray-400);
+  width: 18px;
+  height: 18px;
+}
+.dropdown-selected.open i {
+  transform: rotate(180deg);
+}
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-dark-800);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-bottom-left-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-lg);
+}
+.dropdown-options::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown-options::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2);
+}
+.dropdown-options::-webkit-scrollbar-thumb {
+  background: var(--bg-dark-600);
+  border-radius: 3px;
+}
+.dropdown-options::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+.custom-dropdown.open .dropdown-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.dropdown-option {
+  padding: 12px 16px;
+  color: var(--text-gray-300);
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.dropdown-option:hover {
+  background-color: var(--bg-dark-600);
+  color: var(--text-white);
+}
+.dropdown-option.active {
+  background-color: rgba(99, 102, 241, 0.15);
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+
 /* Range Slider Styles */
 .slider-group { position: relative; }
 .range-slider {

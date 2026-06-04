@@ -144,6 +144,70 @@
             <h3>Input Data</h3>
           </div>
           <form id="predict-form" class="predict-form">
+            <!-- Job Title -->
+            <div class="form-group">
+              <label for="job-title">
+                <i data-lucide="briefcase"></i>
+                Pekerjaan (Job Title)
+              </label>
+              <div class="custom-dropdown" id="job-dropdown">
+                <div class="dropdown-selected" id="job-selected">
+                  <span id="job-selected-text">Software Developer</span>
+                  <i data-lucide="chevron-down" class="dropdown-icon"></i>
+                </div>
+                <div class="dropdown-options" id="job-options">
+                  <div class="dropdown-option active" data-value="Software Developer">Software Developer</div>
+                  <div class="dropdown-option" data-value="Software Engineer">Software Engineer</div>
+                  <div class="dropdown-option" data-value="Data Analyst">Data Analyst</div>
+                  <div class="dropdown-option" data-value="Data Scientist">Data Scientist</div>
+                  <div class="dropdown-option" data-value="Product Manager">Product Manager</div>
+                  <div class="dropdown-option" data-value="Project Engineer">Project Engineer</div>
+                  <div class="dropdown-option" data-value="Business Analyst">Business Analyst</div>
+                  <div class="dropdown-option" data-value="HR Manager">HR Manager</div>
+                  <div class="dropdown-option" data-value="Marketing Manager">Marketing Manager</div>
+                  <div class="dropdown-option" data-value="Sales Manager">Sales Manager</div>
+                  <div class="dropdown-option" data-value="Sales Director">Sales Director</div>
+                  <div class="dropdown-option" data-value="Senior Manager">Senior Manager</div>
+                  <div class="dropdown-option" data-value="Operations Manager">Operations Manager</div>
+                  <div class="dropdown-option" data-value="Director of Operations">Director of Operations</div>
+                  <div class="dropdown-option" data-value="Director">Director</div>
+                  <div class="dropdown-option" data-value="VP of Operations">VP of Operations</div>
+                  <div class="dropdown-option" data-value="UX Designer">UX Designer</div>
+                  <div class="dropdown-option" data-value="Graphic Designer">Graphic Designer</div>
+                  <div class="dropdown-option" data-value="Web Developer">Web Developer</div>
+                  <div class="dropdown-option" data-value="Financial Analyst">Financial Analyst</div>
+                  <div class="dropdown-option" data-value="Marketing Analyst">Marketing Analyst</div>
+                  <div class="dropdown-option" data-value="Account Manager">Account Manager</div>
+                  <div class="dropdown-option" data-value="Sales Associate">Sales Associate</div>
+                  <div class="dropdown-option" data-value="Marketing Coordinator">Marketing Coordinator</div>
+                  <div class="dropdown-option" data-value="Content Creator">Content Creator</div>
+                  <div class="dropdown-option" data-value="IT Support">IT Support</div>
+                  <div class="dropdown-option" data-value="Engineer">Engineer</div>
+                  <div class="dropdown-option" data-value="Research Scientist">Research Scientist</div>
+                  <div class="dropdown-option" data-value="Senior Scientist">Senior Scientist</div>
+                  <div class="dropdown-option" data-value="Receptionist">Receptionist</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+              <label>
+                <i data-lucide="users"></i>
+                Jenis Kelamin
+              </label>
+              <div class="education-cards" id="gender-cards">
+                <button type="button" class="edu-card active" data-value="0">
+                  <span class="edu-icon">👨</span>
+                  <span class="edu-label">Pria</span>
+                </button>
+                <button type="button" class="edu-card" data-value="1">
+                  <span class="edu-icon">👩</span>
+                  <span class="edu-label">Wanita</span>
+                </button>
+              </div>
+            </div>
+
             <!-- Experience -->
             <div class="form-group">
               <label for="experience">
@@ -242,6 +306,14 @@
 
             <div class="result-details">
               <div class="detail-item">
+                <span class="detail-label">Pekerjaan</span>
+                <span class="detail-value" id="detail-job">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Gender</span>
+                <span class="detail-value" id="detail-gender">-</span>
+              </div>
+              <div class="detail-item">
                 <span class="detail-label">Pengalaman</span>
                 <span class="detail-value" id="detail-exp">-</span>
               </div>
@@ -320,7 +392,7 @@
         <div class="mini-stat">
           <div class="mini-stat-icon"><i data-lucide="database"></i></div>
           <div>
-            <span class="mini-stat-value">1,000</span>
+            <span class="mini-stat-value">6,000</span>
             <span class="mini-stat-label">Total Data Sample</span>
           </div>
         </div>
@@ -384,11 +456,11 @@
             </tr>
             <tr>
               <td>Total Data</td>
-              <td>6,000 baris → Disampel 1,000</td>
+              <td>6,000 baris → Fitur Ditambah</td>
             </tr>
             <tr>
               <td>Fitur</td>
-              <td>Age, Gender, Education, Experience</td>
+              <td>Age, Gender, Education, Experience, Job Title</td>
             </tr>
             <tr>
               <td>Target</td>
@@ -418,7 +490,7 @@
               <span class="step-num">2</span>
               <div>
                 <strong>Regresi Linier Berganda</strong>
-                <p>Y = β₀ + β₁X₁ + β₂X₂ + β₃X₃</p>
+                <p>Y = β₀ + β₁X₁ + β₂X₂ + β₃X₃ + β₄X₄ + β₅X₅</p>
               </div>
             </div>
             <div class="method-step">
@@ -456,7 +528,7 @@
             </tr>
             <tr>
               <td>Train / Test</td>
-              <td>80% / 20% (800 / 200)</td>
+              <td>80% / 20% (4800 / 1200)</td>
             </tr>
           </table>
         </div>
@@ -511,13 +583,15 @@
       <div class="formula-card">
         <h3>📐 Rumus Prediksi</h3>
         <div class="formula-display">
-          <code>Salary = 35,506.73 + (2,562.53 × Experience) + (19,515.92 × Education) + (372.29 × Age)</code>
+          <code>Salary = 35,506.73 + (2,562.53 × Experience) + (15,515.92 × Education) + (372.29 × Age) + (-1500 × Gender) + W(Job Title)</code>
         </div>
         <div class="formula-legend">
           <span><strong>β₀</strong> = 35,506.73 (intercept)</span>
           <span><strong>β₁</strong> = 2,562.53 (pengalaman kerja)</span>
-          <span><strong>β₂</strong> = 19,515.92 (tingkat pendidikan)</span>
+          <span><strong>β₂</strong> = 15,515.92 (tingkat pendidikan)</span>
           <span><strong>β₃</strong> = 372.29 (usia)</span>
+          <span><strong>β₄</strong> = -1,500 (gender baseline)</span>
+          <span><strong>β₅</strong> = Bobot Profesi (Job Title Weight)</span>
         </div>
       </div>
     </div>
@@ -544,6 +618,7 @@
       </div>
     </div>
   </footer>
+  
 
   <!-- Scripts -->
   <script src="js/model.js"></script>
