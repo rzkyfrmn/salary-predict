@@ -137,6 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
             resultPlaceholder.classList.add('hidden');
             resultContent.classList.remove('hidden');
             
+            // Tampilkan tombol cetak
+            const printBtn = document.getElementById('print-btn');
+            if(printBtn) printBtn.classList.remove('hidden');
+            
             // Animate count up
             animateValue(salaryResult, 0, Math.round(salary), 1000);
             
@@ -154,6 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 4. Save to History
             addToHistory(salary);
+        });
+    }
+
+    // ========== PRINT FUNCTIONALITY ==========
+    const printBtn = document.getElementById('print-btn');
+    if(printBtn) {
+        printBtn.addEventListener('click', () => {
+            window.print();
         });
     }
 

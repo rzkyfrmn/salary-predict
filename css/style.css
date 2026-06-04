@@ -891,3 +891,48 @@ img { max-width: 100%; height: auto; }
   .team-grid { grid-template-columns: 1fr 1fr; }
   .education-cards { grid-template-columns: 1fr 1fr; }
 }
+
+/* ========== PRINT STYLES ========== */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .navbar, .hero, .input-card, .history-section, #visualize, #about, .footer, #print-btn, #qr-btn {
+    display: none !important;
+  }
+  
+  .predict-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .result-card {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  .result-salary-display {
+    background: #f3f4f6 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .detail-item, .model-badge {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+    color: black !important;
+  }
+
+  .detail-value, .currency, .salary-number, .detail-label, .salary-monthly, .result-comparison h4, .model-formula {
+    color: black !important;
+  }
+  
+  .result-comparison canvas {
+    max-height: 300px !important;
+  }
+}

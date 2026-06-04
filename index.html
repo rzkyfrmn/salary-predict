@@ -206,9 +206,14 @@
 
         <!-- Result Panel -->
         <div class="predict-card result-card" id="result-card">
-          <div class="card-header">
-            <i data-lucide="trending-up"></i>
-            <h3>Hasil Prediksi</h3>
+          <div class="card-header" style="justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <i data-lucide="trending-up"></i>
+              <h3>Hasil Prediksi</h3>
+            </div>
+            <button class="btn btn-sm btn-outline hidden" id="print-btn" style="padding: 6px 12px; font-size: 0.75rem;">
+              <i data-lucide="printer"></i> Cetak
+            </button>
           </div>
 
           <!-- Placeholder -->
