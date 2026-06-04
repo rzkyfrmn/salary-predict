@@ -164,8 +164,47 @@ document.addEventListener('DOMContentLoaded', () => {
     // ========== PRINT FUNCTIONALITY ==========
     const printBtn = document.getElementById('print-btn');
     if(printBtn) {
-        printBtn.addEventListener('click', () => {
-            window.print();
+        printBtn.addEventListener('click', async () => {
+            // Deteksi perangkat mobile atau layar kecil
+            const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                try {
+                    // Simpan state asli
+                    const originalHtml = printBtn.innerHTML;
+                    printBtn.innerHTML = 'Memproses...';
+                    
+                    const resultCard = document.getElementById('result-card');
+                    
+                    // Sembunyikan tombol cetak saat mengambil gambar
+                    printBtn.style.visibility = 'hidden';
+                    
+                    // Render elemen menjadi canvas
+                    const canvas = await html2canvas(resultCard, {
+                        scale: 2, // Resolusi tinggi
+                        backgroundColor: '#121217', // var(--bg-dark-800)
+                        useCORS: true,
+                        logging: false
+                    });
+                    
+                    // Kembalikan tombol cetak
+                    printBtn.style.visibility = 'visible';
+                    printBtn.innerHTML = originalHtml;
+                    
+                    // Unduh sebagai PNG
+                    const link = document.createElement('a');
+                    link.download = `Prediksi-Gaji-SalaryVision-${Date.now()}.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                } catch (error) {
+                    console.error('Gagal mencetak data:', error);
+                    alert('Gagal memproses gambar. Silakan coba fitur Share QR.');
+                    printBtn.style.visibility = 'visible';
+                }
+            } else {
+                // Di Desktop, gunakan dialog print bawaan browser
+                window.print();
+            }
         });
     }
 
