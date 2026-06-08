@@ -9,7 +9,7 @@ const MODEL = {
   intercept: 35506.73,
   coef: {
     experience: 2562.53,
-    education: 15515.92,
+    education: 19515.92,
     age: 372.29,
     gender: -1500, // Misal: baseline gap
     jobTitle: {

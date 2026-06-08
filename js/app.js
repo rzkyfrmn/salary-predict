@@ -19,6 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Elemen DOM
     const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    }
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.getElementById('navbar');
     
@@ -79,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update active state
             navLinks.forEach(l => l.classList.remove('active'));
             link.classList.add('active');
+            if (navMenu) navMenu.classList.remove('active');
         });
     });
 
@@ -272,6 +279,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
         window.requestAnimationFrame(step);
+    }
+
+    function initStatCounters() {
+        document.querySelectorAll('.stat-value[data-count]').forEach(stat => {
+            const count = parseInt(stat.dataset.count, 10);
+            if (!Number.isNaN(count)) {
+                stat.textContent = count.toLocaleString('en-US');
+            }
+        });
     }
 
     // ========== CHARTS RENDERING ==========
@@ -521,6 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========== INIT ==========
+    initStatCounters();
     initVisualizationCharts();
     updateHistoryUI();
 });
