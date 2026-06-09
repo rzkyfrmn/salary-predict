@@ -30,6 +30,10 @@
   <!-- html2canvas -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
+  <!-- TensorFlow.js & COCO-SSD -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -70,6 +74,33 @@
         <p>Scan QR Code di bawah untuk membuka aplikasi ini di perangkat lain:</p>
         <div id="qrcode-container" class="qrcode-container"></div>
         <p class="modal-url" id="modal-url-display"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scanner Modal (Object Detection) -->
+  <div id="scanner-modal" class="modal hidden">
+    <div class="modal-content" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3><i data-lucide="scan"></i> AI Setup Scanner</h3>
+        <button id="close-scanner" class="close-btn"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <p style="margin-bottom: 16px; font-size: 0.9rem; color: var(--text-gray-400);">
+          Sistem akan mendeteksi alat kerja Anda (Laptop, Monitor, Keyboard, Mouse, HP). Arahkan kamera ke meja kerja Anda untuk mendapatkan <strong>Tech Bonus</strong>!
+        </p>
+        <div class="scanner-container" style="position: relative; width: 100%; aspect-ratio: 4/3; background: #000; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px;">
+          <video id="scanner-video" autoplay muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+          <canvas id="scanner-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+          <div id="scanner-loading" class="hidden" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.7);">
+            <div class="spinner"></div>
+            <p style="margin-top: 12px; font-weight: 500;" id="scanner-loading-text">Memuat Model AI...</p>
+          </div>
+        </div>
+        <div class="detected-items" id="detected-items" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; min-height: 32px;">
+          <!-- Badge hasil deteksi akan muncul di sini -->
+        </div>
+        <button id="finish-scan-btn" class="btn btn-primary btn-block">Selesai & Simpan Bonus</button>
       </div>
     </div>
   </div>
@@ -264,6 +295,29 @@
               </div>
             </div>
 
+            <!-- Tech Scanner Bonus -->
+            <div class="form-group" style="margin-bottom: 30px; margin-top: 20px;">
+              <label>
+                <i data-lucide="camera"></i>
+                Tech Setup Scanner (Opsional)
+              </label>
+              <button type="button" class="btn btn-outline btn-block" id="open-scanner-btn" style="border-style: dashed; padding: 14px;">
+                <i data-lucide="scan"></i> Scan Setup Kerja via Webcam
+              </button>
+              
+              <!-- Opsi Unggah Foto -->
+              <div style="text-align: center; margin-top: 12px;">
+                <span style="font-size: 0.85rem; color: var(--text-gray-400);">Webcam tidak tersedia?</span>
+                <label for="upload-setup" style="cursor: pointer; color: var(--primary); font-size: 0.85rem; text-decoration: underline; margin-left: 4px; font-weight: 500;">Unggah Foto Setup</label>
+                <input type="file" id="upload-setup" accept="image/*" class="hidden">
+              </div>
+
+              <div id="scanner-status" style="font-size: 0.85rem; color: var(--success); margin-top: 10px; display: none; text-align: center;">
+                <i data-lucide="check-circle" style="width: 16px; height: 16px; vertical-align: text-bottom;"></i> 
+                <span id="scanner-status-text">Setup terdeteksi! Bonus aktif.</span>
+              </div>
+            </div>
+
             <button type="submit" class="btn btn-primary btn-block" id="predict-btn">
               <i data-lucide="sparkles"></i>
               Prediksi Gaji
@@ -324,6 +378,10 @@
               <div class="detail-item">
                 <span class="detail-label">Usia</span>
                 <span class="detail-value" id="detail-age">-</span>
+              </div>
+              <div class="detail-item" style="grid-column: span 3; background: rgba(16, 185, 129, 0.1); border: 1px dashed rgba(16, 185, 129, 0.3);">
+                <span class="detail-label" style="color: var(--success);">Tech Setup Bonus</span>
+                <span class="detail-value" id="detail-bonus" style="color: var(--success);">+$0</span>
               </div>
             </div>
 
@@ -528,7 +586,7 @@
             </tr>
             <tr>
               <td>Train / Test</td>
-              <td>80% / 20% (4800 / 1200)</td>
+              <td>80% / 20% (800 / 200)</td>
             </tr>
           </table>
         </div>
@@ -583,12 +641,12 @@
       <div class="formula-card">
         <h3>📐 Rumus Prediksi</h3>
         <div class="formula-display">
-          <code>Salary = 35,506.73 + (2,562.53 × Experience) + (15,515.92 × Education) + (372.29 × Age) + (-1500 × Gender) + W(Job Title)</code>
+          <code>Salary = 35,506.73 + (2,562.53 × Experience) + (19,515.92 × Education) + (372.29 × Age) + (-1500 × Gender) + W(Job Title) + Tech Bonus</code>
         </div>
         <div class="formula-legend">
           <span><strong>β₀</strong> = 35,506.73 (intercept)</span>
           <span><strong>β₁</strong> = 2,562.53 (pengalaman kerja)</span>
-          <span><strong>β₂</strong> = 15,515.92 (tingkat pendidikan)</span>
+          <span><strong>β₂</strong> = 19,515.92 (tingkat pendidikan)</span>
           <span><strong>β₃</strong> = 372.29 (usia)</span>
           <span><strong>β₄</strong> = -1,500 (gender baseline)</span>
           <span><strong>β₅</strong> = Bobot Profesi (Job Title Weight)</span>

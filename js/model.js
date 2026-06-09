@@ -104,16 +104,18 @@ const MODEL = {
    * @param {number} age - Age (18-65)
    * @param {number} gender - Gender (0=Male, 1=Female)
    * @param {string} jobTitle - The selected job title
+   * @param {number} techBonus - Bonus from Tech Setup Scanner (default 0)
    * @returns {number} Predicted annual salary in USD
    */
-  predict(experience, education, age, gender, jobTitle) {
+  predict(experience, education, age, gender, jobTitle, techBonus = 0) {
     const jobWeight = this.coef.jobTitle[jobTitle] || 0;
     return this.intercept
       + (this.coef.experience * experience)
       + (this.coef.education * education)
       + (this.coef.age * age)
       + (this.coef.gender * gender)
-      + jobWeight;
+      + jobWeight
+      + techBonus;
   },
 
   /**

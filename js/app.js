@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         age: 25,
         gender: 0, // Default Pria
         jobTitle: 'Software Developer', // Default
+        techBonus: 0, // Bonus from Scanner
         history: JSON.parse(localStorage.getItem('salary_predict_history') || '[]')
     };
 
@@ -61,6 +62,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const qrContainer = document.getElementById('qrcode-container');
     const modalUrlDisplay = document.getElementById('modal-url-display');
     let qrGenerated = false;
+
+    // Scanner DOM
+    const openScannerBtn = document.getElementById('open-scanner-btn');
+    const scannerModal = document.getElementById('scanner-modal');
+    const closeScannerBtn = document.getElementById('close-scanner');
+    const scannerVideo = document.getElementById('scanner-video');
+    const scannerCanvas = document.getElementById('scanner-canvas');
+    const scannerLoading = document.getElementById('scanner-loading');
+    const detectedItemsContainer = document.getElementById('detected-items');
+    const finishScanBtn = document.getElementById('finish-scan-btn');
+    const scannerStatus = document.getElementById('scanner-status');
+    const detailBonus = document.getElementById('detail-bonus');
+    const uploadSetupInput = document.getElementById('upload-setup');
+    
+    let objectDetectorModel = null;
+    let scannerStream = null;
+    let detectionFrameId = null;
+    let detectedObjects = new Set();
+    const objectBonuses = {
+        'laptop': 2000,
+        'tv': 2000, // Monitor sering terdeteksi sebagai tv
+        'mouse': 500,
+        'keyboard': 500,
+        'cell phone': 500,
+        'chair': 300,  // Bonus Kursi Ergonomis
+        'cup': 100,    // Bonus Kopi/Teh Produktivitas
+        'book': 100    // Bonus Referensi Belajar
+    };
 
     // 4. Inisialisasi Chart.js
     let comparisonChart = null;
@@ -189,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             // 1. Calculate Prediction
-            const salary = MODEL.predict(state.experience, state.education, state.age, state.gender, state.jobTitle);
+            const salary = MODEL.predict(state.experience, state.education, state.age, state.gender, state.jobTitle, state.techBonus);
             
             // 2. Update UI Result
             resultPlaceholder.classList.add('hidden');
@@ -212,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
             detailAge.textContent = `${state.age} tahun`;
             detailJob.textContent = state.jobTitle;
             detailGender.textContent = state.gender === 0 ? "Pria" : "Wanita";
+            if(detailBonus) detailBonus.textContent = `+$${state.techBonus}`;
 
             // 3. Render Comparison Chart
             renderComparisonChart(state.experience, state.age, state.gender, state.jobTitle);
@@ -442,6 +472,238 @@ document.addEventListener('DOMContentLoaded', () => {
                     x: { grid: { display: false } }
                 }
             }
+        });
+    }
+
+    // ========== SCANNER LOGIC ==========
+    
+    async function startScanner() {
+        if (!scannerModal) return;
+        scannerModal.classList.remove('hidden');
+        scannerLoading.classList.remove('hidden');
+        
+        const loadingText = document.getElementById('scanner-loading-text');
+        if (loadingText) loadingText.textContent = "Meminta izin kamera...";
+        
+        detectedObjects.clear();
+        state.techBonus = 0;
+        updateDetectedItemsUI();
+        
+        try {
+            // Pastikan video tampil jika sebelumnya disembunyikan
+            scannerVideo.style.display = 'block';
+
+            // Get webcam
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                throw new Error("Browser Anda tidak mendukung akses Kamera.");
+            }
+            scannerStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+            scannerVideo.srcObject = scannerStream;
+            
+            if (loadingText) loadingText.textContent = "Menyalakan kamera...";
+            
+            // Wait for video to be ready
+            await new Promise((resolve) => {
+                if (scannerVideo.readyState >= 1) {
+                    resolve();
+                } else {
+                    scannerVideo.onloadedmetadata = () => {
+                        resolve();
+                    };
+                }
+            });
+            
+            await scannerVideo.play();
+            
+            // Set canvas dimensions
+            scannerCanvas.width = scannerVideo.videoWidth || 640;
+            scannerCanvas.height = scannerVideo.videoHeight || 480;
+            
+            if (loadingText) loadingText.textContent = "Mengunduh AI Model (Sekitar 5MB)... Mohon tunggu.";
+            
+            // Load model if not loaded
+            if (!objectDetectorModel) {
+                objectDetectorModel = await cocoSsd.load();
+            }
+            
+            scannerLoading.classList.add('hidden');
+            detectFrame();
+            
+        } catch (err) {
+            console.error('Error accessing webcam or loading model:', err);
+            scannerLoading.innerHTML = `<p style="color:var(--danger); text-align:center; padding: 0 20px;">Gagal: ${err.message || 'Pastikan izin kamera diberikan dan koneksi internet stabil.'}</p>`;
+        }
+    }
+    
+    function stopScanner() {
+        if (detectionFrameId) cancelAnimationFrame(detectionFrameId);
+        if (scannerStream) {
+            scannerStream.getTracks().forEach(track => track.stop());
+        }
+        scannerVideo.srcObject = null;
+        if(scannerModal) scannerModal.classList.add('hidden');
+    }
+    
+    async function detectFrame() {
+        if (!objectDetectorModel || !scannerVideo.videoWidth) return;
+        
+        // Parameter: gambar, max objek (20), threshold akurasi (0.3 agar lebih sensitif)
+        const predictions = await objectDetectorModel.detect(scannerVideo, 20, 0.3);
+        const ctx = scannerCanvas.getContext('2d');
+        ctx.clearRect(0, 0, scannerCanvas.width, scannerCanvas.height);
+        
+        let newDetection = false;
+        
+        predictions.forEach(prediction => {
+            // Draw bounding box
+            const [x, y, width, height] = prediction.bbox;
+            const text = prediction.class;
+            
+            // Only highlight tech objects we care about
+            if (objectBonuses[text]) {
+                ctx.strokeStyle = '#10b981'; // Success green
+                ctx.fillStyle = '#10b981';
+                
+                if (!detectedObjects.has(text)) {
+                    detectedObjects.add(text);
+                    state.techBonus += objectBonuses[text];
+                    newDetection = true;
+                }
+            } else {
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+            }
+            
+            ctx.lineWidth = 2;
+            ctx.strokeRect(x, y, width, height);
+            
+            ctx.font = '16px "JetBrains Mono"';
+            const textWidth = ctx.measureText(text).width;
+            ctx.fillRect(x, y, textWidth + 10, 24);
+            ctx.fillStyle = '#000000';
+            ctx.fillText(text, x + 5, y + 16);
+        });
+        
+        if (newDetection) {
+            updateDetectedItemsUI();
+        }
+        
+        detectionFrameId = requestAnimationFrame(detectFrame);
+    }
+    
+    function updateDetectedItemsUI() {
+        if (detectedObjects.size === 0) {
+            detectedItemsContainer.innerHTML = '<span style="color: var(--text-gray-500); font-size: 0.85rem;">Belum ada objek terdeteksi...</span>';
+            return;
+        }
+        
+        detectedItemsContainer.innerHTML = Array.from(detectedObjects).map(obj => 
+            `<span class="detected-badge"><i data-lucide="check-circle" style="width: 14px;"></i> ${obj} (+$${objectBonuses[obj]})</span>`
+        ).join('');
+        lucide.createIcons();
+    }
+    
+    if (openScannerBtn) openScannerBtn.addEventListener('click', startScanner);
+    if (closeScannerBtn) closeScannerBtn.addEventListener('click', stopScanner);
+    if (finishScanBtn) finishScanBtn.addEventListener('click', () => {
+        stopScanner();
+        if (state.techBonus > 0) {
+            if(scannerStatus) scannerStatus.style.display = 'block';
+            document.getElementById('scanner-status-text').textContent = `Bonus Aktif: +$${state.techBonus} dari ${detectedObjects.size} alat`;
+            openScannerBtn.style.borderColor = 'var(--success)';
+            openScannerBtn.style.color = 'var(--success)';
+            openScannerBtn.innerHTML = `<i data-lucide="check-circle"></i> Setup Discan (${detectedObjects.size} alat)`;
+            lucide.createIcons();
+        }
+    });
+
+    // Fitur Unggah Foto Setup (Fallback)
+    if (uploadSetupInput) {
+        uploadSetupInput.addEventListener('change', async (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            if (scannerModal) scannerModal.classList.remove('hidden');
+            if (scannerLoading) scannerLoading.classList.remove('hidden');
+            
+            const loadingText = document.getElementById('scanner-loading-text');
+            if (loadingText) loadingText.textContent = "Memproses Gambar...";
+            
+            detectedObjects.clear();
+            state.techBonus = 0;
+            updateDetectedItemsUI();
+            
+            // Matikan stream video yang sedang aktif (jika ada)
+            if (scannerStream) {
+                scannerStream.getTracks().forEach(track => track.stop());
+            }
+            scannerVideo.srcObject = null;
+            scannerVideo.style.display = 'none'; // Sembunyikan video
+            
+            try {
+                // Buat elemen gambar statis
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+                await new Promise(resolve => img.onload = resolve);
+                
+                // Set ukuran canvas sama dengan gambar
+                scannerCanvas.width = img.width;
+                scannerCanvas.height = img.height;
+                const ctx = scannerCanvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+                
+                // Pastikan AI termuat
+                if (!objectDetectorModel) {
+                    if (loadingText) loadingText.textContent = "Mengunduh AI Model (Sekitar 5MB)...";
+                    objectDetectorModel = await cocoSsd.load();
+                }
+                
+                if (scannerLoading) scannerLoading.classList.add('hidden');
+                
+                // Deteksi AI pada canvas (max 20 objek, threshold 0.3)
+                const predictions = await objectDetectorModel.detect(scannerCanvas, 20, 0.3);
+                
+                let newDetection = false;
+                predictions.forEach(prediction => {
+                    const [x, y, width, height] = prediction.bbox;
+                    const text = prediction.class;
+                    
+                    if (objectBonuses[text]) {
+                        ctx.strokeStyle = '#10b981';
+                        ctx.fillStyle = '#10b981';
+                        if (!detectedObjects.has(text)) {
+                            detectedObjects.add(text);
+                            state.techBonus += objectBonuses[text];
+                            newDetection = true;
+                        }
+                    } else {
+                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+                    }
+                    
+                    ctx.lineWidth = 3;
+                    ctx.strokeRect(x, y, width, height);
+                    ctx.font = '16px "JetBrains Mono"';
+                    const textWidth = ctx.measureText(text).width;
+                    ctx.fillRect(x, y, textWidth + 10, 24);
+                    ctx.fillStyle = '#000000';
+                    ctx.fillText(text, x + 5, y + 16);
+                });
+                
+                if (newDetection) {
+                    updateDetectedItemsUI();
+                } else {
+                    detectedItemsContainer.innerHTML = '<span style="color: var(--danger); font-size: 0.85rem;">Tidak ada barang tech terdeteksi di foto.</span>';
+                }
+            } catch (err) {
+                console.error("Gagal memproses gambar:", err);
+                if (scannerLoading) {
+                    scannerLoading.innerHTML = '<p style="color:var(--danger)">Gagal memproses gambar.</p>';
+                }
+            }
+            
+            // Reset input agar bisa pilih file yang sama lagi
+            e.target.value = '';
         });
     }
 
