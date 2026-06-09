@@ -85,10 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'tv': 2000, // Monitor sering terdeteksi sebagai tv
         'mouse': 500,
         'keyboard': 500,
-        'cell phone': 500,
-        'chair': 300,  // Bonus Kursi Ergonomis
-        'cup': 100,    // Bonus Kopi/Teh Produktivitas
-        'book': 100    // Bonus Referensi Belajar
+        'cell phone': 500
     };
 
     // 4. Inisialisasi Chart.js
@@ -547,8 +544,8 @@ document.addEventListener('DOMContentLoaded', () => {
     async function detectFrame() {
         if (!objectDetectorModel || !scannerVideo.videoWidth) return;
         
-        // Parameter: gambar, max objek (20), threshold akurasi (0.3 agar lebih sensitif)
-        const predictions = await objectDetectorModel.detect(scannerVideo, 20, 0.3);
+        // Parameter: gambar, max objek (20), threshold akurasi (0.5)
+        const predictions = await objectDetectorModel.detect(scannerVideo, 20, 0.5);
         const ctx = scannerCanvas.getContext('2d');
         ctx.clearRect(0, 0, scannerCanvas.width, scannerCanvas.height);
         
@@ -660,8 +657,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (scannerLoading) scannerLoading.classList.add('hidden');
                 
-                // Deteksi AI pada canvas (max 20 objek, threshold 0.3)
-                const predictions = await objectDetectorModel.detect(scannerCanvas, 20, 0.3);
+                // Deteksi AI pada canvas (max 20 objek, threshold 0.5)
+                const predictions = await objectDetectorModel.detect(scannerCanvas, 20, 0.5);
                 
                 let newDetection = false;
                 predictions.forEach(prediction => {
