@@ -81,17 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let detectionFrameId = null;
     let detectedObjects = new Set();
     const objectBonuses = {
-        'laptop': 2000,
-        'tv': 2000,        // Monitor/TV terdeteksi sebagai tv
-        'monitor': 2000,   // Jika terdeteksi langsung sebagai monitor
-        'mouse': 500,
-        'keyboard': 500,
-        'remote': 500,     // Keyboard kadang terdeteksi sebagai remote
-        'cell phone': 500,
-        'book': 300,       // Buku/dokumen di meja
-        'clock': 200,      // Jam di meja
-        'cup': 100,        // Mug kopi programmer
-        'bottle': 100      // Botol minum
+        'laptop': 2000,     // Laptop
+        'tv': 2000,         // Monitor (terdeteksi sebagai tv oleh COCO-SSD)
+        'mouse': 500,       // Mouse
+        'keyboard': 500,    // Keyboard
+        'cell phone': 500   // Handphone
     };
 
     // 4. Inisialisasi Chart.js
