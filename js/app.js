@@ -88,6 +88,12 @@ document.addEventListener('DOMContentLoaded', () => {
         'cell phone': 500   // Handphone
     };
 
+    // Threshold khusus per objek (tv lebih ketat agar tidak false positive)
+    const objectThresholds = {
+        'tv': 0.45,         // Monitor harus jelas/dekat kamera
+        'default': 0.25     // Objek lain tetap sensitif
+    };
+
     // 4. Inisialisasi Chart.js
     let comparisonChart = null;
     let eduSalaryChart = null;
@@ -555,6 +561,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Draw bounding box
             const [x, y, width, height] = prediction.bbox;
             const text = prediction.class;
+            const score = prediction.score;
+
+            // Cek threshold khusus per objek
+            const requiredScore = objectThresholds[text] || objectThresholds['default'];
+            if (score < requiredScore) return; // Skip jika tidak memenuhi threshold
             
             // Only highlight tech objects we care about
             if (objectBonuses[text]) {
@@ -664,6 +675,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 predictions.forEach(prediction => {
                     const [x, y, width, height] = prediction.bbox;
                     const text = prediction.class;
+                    const score = prediction.score;
+
+                    // Cek threshold khusus per objek
+                    const requiredScore = objectThresholds[text] || objectThresholds['default'];
+                    if (score < requiredScore) return; // Skip jika tidak memenuhi threshold
                     
                     if (objectBonuses[text]) {
                         ctx.strokeStyle = '#10b981';
