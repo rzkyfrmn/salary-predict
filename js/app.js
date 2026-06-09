@@ -82,10 +82,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let detectedObjects = new Set();
     const objectBonuses = {
         'laptop': 2000,
-        'tv': 2000, // Monitor sering terdeteksi sebagai tv
+        'tv': 2000,        // Monitor/TV terdeteksi sebagai tv
+        'monitor': 2000,   // Jika terdeteksi langsung sebagai monitor
         'mouse': 500,
         'keyboard': 500,
-        'cell phone': 500
+        'remote': 500,     // Keyboard kadang terdeteksi sebagai remote
+        'cell phone': 500,
+        'book': 300,       // Buku/dokumen di meja
+        'clock': 200,      // Jam di meja
+        'cup': 100,        // Mug kopi programmer
+        'bottle': 100      // Botol minum
     };
 
     // 4. Inisialisasi Chart.js
@@ -544,8 +550,8 @@ document.addEventListener('DOMContentLoaded', () => {
     async function detectFrame() {
         if (!objectDetectorModel || !scannerVideo.videoWidth) return;
         
-        // Parameter: gambar, max objek (20), threshold akurasi (0.5)
-        const predictions = await objectDetectorModel.detect(scannerVideo, 20, 0.5);
+        // Parameter: gambar, max objek (20), threshold akurasi (0.25) - diturunkan agar lebih sensitif
+        const predictions = await objectDetectorModel.detect(scannerVideo, 20, 0.25);
         const ctx = scannerCanvas.getContext('2d');
         ctx.clearRect(0, 0, scannerCanvas.width, scannerCanvas.height);
         
@@ -657,8 +663,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (scannerLoading) scannerLoading.classList.add('hidden');
                 
-                // Deteksi AI pada canvas (max 20 objek, threshold 0.5)
-                const predictions = await objectDetectorModel.detect(scannerCanvas, 20, 0.5);
+                // Deteksi AI pada canvas (max 20 objek, threshold 0.25) - diturunkan agar lebih sensitif
+                const predictions = await objectDetectorModel.detect(scannerCanvas, 20, 0.25);
                 
                 let newDetection = false;
                 predictions.forEach(prediction => {
